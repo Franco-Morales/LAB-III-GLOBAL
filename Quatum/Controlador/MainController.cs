@@ -26,9 +26,10 @@ namespace Quatum.Controlador
             vistaMenu.btnMIN.Click += new EventHandler(minimizar);
             vistaMenu.btnMAX.Click += new EventHandler(maximizar);
             vistaMenu.btnRESTORE.Click += new EventHandler(restaurar);
-            vistaMenu.exit.Click += new EventHandler(cerrar);
 
-            vistaMenu.libroDiarioMenuItem.Click += new EventHandler(libroDiarioOpen);
+            vistaMenu.Exit.Click += new EventHandler(cerrar);
+            vistaMenu.LD.Click += new EventHandler(libroDiarioOpen);
+            
         }
 
 

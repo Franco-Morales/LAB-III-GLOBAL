@@ -9,3 +9,14 @@ C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatu
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.Modal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojAssemblyReference.cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.Modal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.pdb
