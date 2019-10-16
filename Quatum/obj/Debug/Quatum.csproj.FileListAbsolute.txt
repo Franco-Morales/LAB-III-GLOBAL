@@ -20,3 +20,6 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Q
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.pdb
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb
