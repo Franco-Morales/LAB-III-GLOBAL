@@ -23,3 +23,10 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\Q
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojResolveAssemblyReference.cache
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.Modal.resources
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
+C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.Cache

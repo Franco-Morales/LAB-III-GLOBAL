@@ -62,6 +62,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDPlanCuentas\BDConectar.cs" />
+    <Compile Include="BDPlanCuentas\Consultas\ConsultaPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDPlanCuentas\Consultas\ConsultaPC.Designer.cs">
+      <DependentUpon>ConsultaPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="BDPlanCuentas\PlanCuentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BDPlanCuentas\Consultas\ConsultaPC.resx">
+      <DependentUpon>ConsultaPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal.resx">
       <DependentUpon>Modal.cs</DependentUpon>
     </EmbeddedResource>
