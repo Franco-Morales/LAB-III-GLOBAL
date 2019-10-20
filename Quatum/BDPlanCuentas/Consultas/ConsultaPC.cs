@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using System.Windows.Forms;
 namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
@@ -27,13 +21,18 @@ namespace Quatum.BDPlanCuentas.Consultas
             //Establecer la conexion
             conexion.ConnectionString = BDConectar.Conectar();
         }
-
+        
         private void seleccionarTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             adaptador.SelectCommand = sqlselect;
             sqlselect.Connection = conexion;
             int index = seleccionarTipo.SelectedIndex;
+            
             DataTable dt = (DataTable)rejilla.DataSource;
+            /*
+             * ALEX : Tira error por null Referenc Exception, 
+             * creo que habria que anidar dos try o especificar los catch.
+             */
             switch (index)
             {
                 case 0: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Activo')";
@@ -69,7 +68,6 @@ namespace Quatum.BDPlanCuentas.Consultas
 
             rejilla.Columns[0].HeaderText = "Descripcion";
             
-        }
         }
         //Consultas del plan de cuentas
         

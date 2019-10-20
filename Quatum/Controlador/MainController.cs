@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quatum.GUI;
+using Quatum.BDPlanCuentas.Consultas;
 
 namespace Quatum.Controlador
 {
@@ -29,6 +26,7 @@ namespace Quatum.Controlador
 
             vistaMenu.Exit.Click += new EventHandler(cerrar);
             vistaMenu.LD.Click += new EventHandler(libroDiarioOpen);
+            vistaMenu.PlanCuenta.Click += new EventHandler(PlanCuentaOpen);
             
         }
 
@@ -73,10 +71,26 @@ namespace Quatum.Controlador
             }
             catch (Exception exc)
             {
-                string mensaje = "Error al abrir el libro diario \nWindows dice :"+ exc.Message;
-                MessageBox.Show(mensaje,"Libro Diario : Show : Error",MessageBoxButtons.OK,MessageBoxIcon.Error);   
+                string msj = "Error al abrir el libro diario \nWindows dice :"+ exc.Message;
+                MessageBox.Show(msj,"Libro Diario : Show : Error",MessageBoxButtons.OK,MessageBoxIcon.Error);   
             }
             
+        }
+
+        #endregion
+
+        #region Plan de Cuenta : Eventos
+
+        public void PlanCuentaOpen(Object sender,EventArgs e)
+        {
+            try {
+                ConsultaPC pcVista = new ConsultaPC();
+                pcVista.Show();
+            } catch (Exception exc) {
+                string msj = "Error al abrir el Plan de Cuentas \nWindows dice :" + exc.Message;
+                MessageBox.Show(msj,"Pland de Cuentas : Show : Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                
+            }
         }
 
         #endregion

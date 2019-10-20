@@ -71,6 +71,8 @@
             // 
             // btnCLOSE
             // 
+            this.btnCLOSE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCLOSE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLOSE.Image = ((System.Drawing.Image)(resources.GetObject("btnCLOSE.Image")));
             this.btnCLOSE.Location = new System.Drawing.Point(772, 3);

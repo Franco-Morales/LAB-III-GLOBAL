@@ -30,3 +30,6 @@ C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.Libr
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
 C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.Cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CopyComplete

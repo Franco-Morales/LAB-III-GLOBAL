@@ -40,12 +40,13 @@
             this.Archivo = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarAExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportar = new System.Windows.Forms.ToolStripMenuItem();
-            this.LD = new System.Windows.Forms.ToolStripMenuItem();
-            this.Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.Inv = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.LD = new System.Windows.Forms.ToolStripMenuItem();
+            this.Inv = new System.Windows.Forms.ToolStripMenuItem();
+            this.PlanCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMarco = new System.Windows.Forms.Panel();
+            this.help = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRESTORE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMAX)).BeginInit();
@@ -143,7 +144,8 @@
             this.Inicio,
             this.LD,
             this.Inv,
-            this.Help});
+            this.PlanCuenta,
+            this.help});
             this.menu.Location = new System.Drawing.Point(0, 64);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(1000, 30);
@@ -169,7 +171,7 @@
             this.exportarAExcelToolStripMenuItem});
             this.Archivo.ForeColor = System.Drawing.Color.White;
             this.Archivo.Name = "Archivo";
-            this.Archivo.Size = new System.Drawing.Size(180, 26);
+            this.Archivo.Size = new System.Drawing.Size(163, 26);
             this.Archivo.Text = "Archivo";
             // 
             // exportarAExcelToolStripMenuItem
@@ -185,8 +187,22 @@
             this.excelToolStripMenuItem});
             this.Exportar.ForeColor = System.Drawing.Color.White;
             this.Exportar.Name = "Exportar";
-            this.Exportar.Size = new System.Drawing.Size(180, 26);
+            this.Exportar.Size = new System.Drawing.Size(163, 26);
             this.Exportar.Text = "Exportar a ...";
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.excelToolStripMenuItem.Text = "Excel";
+            // 
+            // Exit
+            // 
+            this.Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
+            this.Exit.ForeColor = System.Drawing.Color.White;
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(163, 26);
+            this.Exit.Text = "Salir";
             // 
             // LD
             // 
@@ -196,14 +212,6 @@
             this.LD.Size = new System.Drawing.Size(104, 26);
             this.LD.Text = "Libro Diario";
             // 
-            // Help
-            // 
-            this.Help.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Help.ForeColor = System.Drawing.Color.White;
-            this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(66, 26);
-            this.Help.Text = "Ayuda";
-            // 
             // Inv
             // 
             this.Inv.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -212,19 +220,13 @@
             this.Inv.Size = new System.Drawing.Size(92, 26);
             this.Inv.Text = "Inventario";
             // 
-            // excelToolStripMenuItem
+            // PlanCuenta
             // 
-            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.excelToolStripMenuItem.Text = "Excel";
-            // 
-            // Exit
-            // 
-            this.Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
-            this.Exit.ForeColor = System.Drawing.Color.White;
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(180, 26);
-            this.Exit.Text = "Salir";
+            this.PlanCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.PlanCuenta.ForeColor = System.Drawing.Color.White;
+            this.PlanCuenta.Name = "PlanCuenta";
+            this.PlanCuenta.Size = new System.Drawing.Size(133, 26);
+            this.PlanCuenta.Text = "Plan de Cuentas";
             // 
             // pnlMarco
             // 
@@ -235,6 +237,14 @@
             this.pnlMarco.Name = "pnlMarco";
             this.pnlMarco.Size = new System.Drawing.Size(1000, 94);
             this.pnlMarco.TabIndex = 3;
+            // 
+            // help
+            // 
+            this.help.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.help.ForeColor = System.Drawing.Color.White;
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(66, 26);
+            this.help.Text = "Ayuda";
             // 
             // MenuPrincipal
             // 
@@ -277,10 +287,11 @@
         private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exportar;
         private System.Windows.Forms.ToolStripMenuItem Inv;
-        private System.Windows.Forms.ToolStripMenuItem Help;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMarco;
         public System.Windows.Forms.ToolStripMenuItem LD;
         public System.Windows.Forms.ToolStripMenuItem Exit;
+        public System.Windows.Forms.ToolStripMenuItem help;
+        public System.Windows.Forms.ToolStripMenuItem PlanCuenta;
     }
 }
