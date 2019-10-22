@@ -10,9 +10,6 @@ C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatu
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.Modal.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojAssemblyReference.cache
-C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.Modal.resources
-C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
-C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.cache
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
@@ -33,3 +30,6 @@ C:\Users\Edunec\Documents\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.G
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CopyComplete
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroDiarioUI.LibroDiario.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources

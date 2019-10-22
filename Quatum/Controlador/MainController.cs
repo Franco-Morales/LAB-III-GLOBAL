@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Quatum.GUI;
+using Quatum.Vista.MenuPrincipalUI;
+using Quatum.Vista.LibroDiarioUI;
 using Quatum.BDPlanCuentas.Consultas;
 
 namespace Quatum.Controlador
@@ -10,7 +11,7 @@ namespace Quatum.Controlador
     /// </summary>
     class MainController
     {
-        MenuPrincipal vistaMenu;
+        private MenuPrincipal vistaMenu;
 
 
         public MainController() { }
@@ -64,10 +65,11 @@ namespace Quatum.Controlador
         {
             try
             {
-                    LibroDiario lbVista = new LibroDiario();
-                    lbVista.MdiParent = vistaMenu;
-                    lbVista.Dock = DockStyle.Fill;
-                    lbVista.Show();
+                
+                LibroDiario lbVista = new LibroDiario();
+                lbVista.MdiParent = vistaMenu;
+                lbVista.Dock = DockStyle.Fill;
+                lbVista.Show();
             }
             catch (Exception exc)
             {

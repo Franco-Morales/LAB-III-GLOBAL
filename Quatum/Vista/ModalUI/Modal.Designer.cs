@@ -1,4 +1,4 @@
-﻿namespace Quatum.GUI
+﻿namespace Quatum.Vista.ModalUI
 {
     partial class Modal
     {

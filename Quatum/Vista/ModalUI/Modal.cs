@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quatum.Vista.ModalUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quatum.GUI
+namespace Quatum.Vista.ModalUI
 {
     public partial class Modal : Form
     {
         public Modal()
         {
             InitializeComponent();
-            _ = new Quatum.Controlador.ModalController(this);
+            _ = new ModalController(this);
         }
     }
 }

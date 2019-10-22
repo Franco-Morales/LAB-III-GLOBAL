@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Quatum.GUI;
+﻿
 
-namespace Quatum.Controlador
+namespace Quatum.Vista.ModalUI
 {
     /// <summary>
     /// Controlador del "modal"
@@ -15,7 +10,7 @@ namespace Quatum.Controlador
         Modal ventana;
         public ModalController() { }
 
-        public ModalController(Modal ventanaEmergente) 
+        public ModalController(Modal ventanaEmergente)
         {
             ventana = ventanaEmergente;
         }

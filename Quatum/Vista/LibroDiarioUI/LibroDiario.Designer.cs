@@ -1,4 +1,4 @@
-﻿namespace Quatum.GUI
+﻿namespace Quatum.Vista.LibroDiarioUI
 {
     partial class LibroDiario
     {

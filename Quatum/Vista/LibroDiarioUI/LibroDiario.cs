@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Quatum.Vista.LibroDiarioUI;
 using System.Windows.Forms;
-using Quatum.Controlador;
 
-namespace Quatum.GUI
+namespace Quatum.Vista.LibroDiarioUI
 {
     public partial class LibroDiario : Form
     {

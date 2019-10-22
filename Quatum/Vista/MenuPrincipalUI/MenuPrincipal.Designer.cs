@@ -1,4 +1,4 @@
-﻿namespace Quatum.GUI
+﻿namespace Quatum.Vista.MenuPrincipalUI
 {
     partial class MenuPrincipal
     {
@@ -59,7 +59,7 @@
             // 
             // ICONO
             // 
-            this.ICONO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ICONO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ICONO.Image = ((System.Drawing.Image)(resources.GetObject("ICONO.Image")));
             this.ICONO.Location = new System.Drawing.Point(12, 12);
@@ -71,7 +71,7 @@
             // 
             // btnRESTORE
             // 
-            this.btnRESTORE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnRESTORE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRESTORE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRESTORE.Image = ((System.Drawing.Image)(resources.GetObject("btnRESTORE.Image")));
@@ -85,7 +85,7 @@
             // 
             // btnMAX
             // 
-            this.btnMAX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnMAX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMAX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMAX.Image = ((System.Drawing.Image)(resources.GetObject("btnMAX.Image")));
@@ -98,7 +98,7 @@
             // 
             // btnCLOSE
             // 
-            this.btnCLOSE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCLOSE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCLOSE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLOSE.Image = ((System.Drawing.Image)(resources.GetObject("btnCLOSE.Image")));
@@ -111,7 +111,7 @@
             // 
             // btnMIN
             // 
-            this.btnMIN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnMIN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMIN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMIN.Image = ((System.Drawing.Image)(resources.GetObject("btnMIN.Image")));

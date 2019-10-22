@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Quatum.GUI;
+using Quatum.Vista.ModalUI;
 
-namespace Quatum.Controlador
+namespace Quatum.Vista.LibroDiarioUI
 {
     /// <summary>
     /// Controlador del Libro Diario
@@ -28,12 +23,12 @@ namespace Quatum.Controlador
 
         #region Gestión de EVENTOS
 
-        private void cerrar(Object sender, EventArgs e)
+        private void cerrar(object sender, EventArgs e)
         {
             vistaPrincipal.Close();
         }
 
-        private void Agregar(Object sender,EventArgs e)
+        private void Agregar(object sender, EventArgs e)
         {
             Modal ventanaEmergente = new Modal();
             ventanaEmergente.ShowDialog();
