@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -71,10 +71,10 @@
     <Compile Include="BDPlanCuentas\Consultas\ConsultaPC.Designer.cs">
       <DependentUpon>ConsultaPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="BDPlanCuentas\PlanCuentas.Designer.cs">
+    <Compile Include="BDPlanCuentas\_PLAN_CUENTAS_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PlanCuentas.xsd</DependentUpon>
+      <DependentUpon>_PLAN_CUENTAS_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controlador\MainController.cs" />
     <Compile Include="Program.cs" />
@@ -120,16 +120,16 @@
     <EmbeddedResource Include="Vista\ModalUI\Modal.resx">
       <DependentUpon>Modal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BDPlanCuentas\PlanCuentas.xsc">
-      <DependentUpon>PlanCuentas.xsd</DependentUpon>
+    <None Include="BDPlanCuentas\_PLAN_CUENTAS_DataSet.xsc">
+      <DependentUpon>_PLAN_CUENTAS_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDPlanCuentas\PlanCuentas.xsd">
+    <None Include="BDPlanCuentas\_PLAN_CUENTAS_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PlanCuentas.Designer.cs</LastGenOutput>
+      <LastGenOutput>_PLAN_CUENTAS_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDPlanCuentas\PlanCuentas.xss">
-      <DependentUpon>PlanCuentas.xsd</DependentUpon>
+    <None Include="BDPlanCuentas\_PLAN_CUENTAS_DataSet.xss">
+      <DependentUpon>_PLAN_CUENTAS_DataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,6 +149,9 @@
     <Folder Include="Modelo\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BDPlanCuentas\PLAN-CUENTAS-BD.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Vista\Iconos\add.png" />
     <Content Include="Vista\Iconos\Close.png" />
     <Content Include="Vista\Iconos\delete.png" />
