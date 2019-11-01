@@ -33,3 +33,12 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Q
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroDiarioUI.LibroDiario.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojResolveAssemblyReference.cache
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroDiarioUI.LibroDiario.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.Cache

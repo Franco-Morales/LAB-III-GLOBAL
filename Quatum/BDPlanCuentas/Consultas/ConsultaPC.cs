@@ -1,73 +1,66 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlServerCe;
 using System.Windows.Forms;
 namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
     {
 
-        SqlCeDataAdapter adaptador;
-        SqlCeCommand sqlselect;
-        SqlCeConnection conexion;
-        DataSet dataset1;
         public ConsultaPC()
         {
             InitializeComponent();
-            adaptador = new SqlCeDataAdapter();
-            sqlselect = new SqlCeCommand();
-            conexion = new SqlCeConnection();
-            dataset1 = new DataSet();
-            //Establecer la conexion
-            conexion.ConnectionString = BDConectar.Conectar();
         }
-        
         private void seleccionarTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            adaptador.SelectCommand = sqlselect;
-            sqlselect.Connection = conexion;
             int index = seleccionarTipo.SelectedIndex;
             
-            DataTable dt = (DataTable)rejilla.DataSource;
+            DataTable dt = (DataTable)dataSet.DataSource;
             /*
              * ALEX : Tira error por null Referenc Exception, 
              * creo que habria que anidar dos try o especificar los catch.
              */
             switch (index)
             {
-                case 0: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Activo')";
+                case 0:
+                    try
+                    {
+                        this.plan_cuentasTableAdapter.Activos(this.globalDataSet.plan_cuentas);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
                     break;
-                case 1: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Pasivo')";
-                    dt.Clear();
+                case 1: 
                     break;
-                case 2: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Patrimonio Neto')";
-                    dt.Clear();
+                case 2: 
                     break;
-                case 3: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Ingreso')";
-                    dt.Clear();
+                case 3: 
                     break;
-                case 4: sqlselect.CommandText = "SELECT tipo,[descripcion] FROM [Plan-De-Cuentas] WHERE (tipo = N'Egreso')";
-                    dt.Clear();
+                case 4: 
                     break;
             }
+            
+        }
+
+        private void ConsultaPC_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'globalDataSet.plan_cuentas' Puede moverla o quitarla según sea necesario.
+            this.plan_cuentasTableAdapter.Fill(this.globalDataSet.plan_cuentas);
+
+        }
+
+        private void activosToolStripButton_Click(object sender, EventArgs e)
+        {
             try
             {
-                conexion.Open();
-
+                this.plan_cuentasTableAdapter.Activos(this.globalDataSet.plan_cuentas);
             }
-            catch (SqlCeException ex)
+            catch (System.Exception ex)
             {
-                Console.WriteLine("Error" + ex.Message);
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-            adaptador.Fill(dataset1, "[Plan-De-Cuentas]");
-            //cerrar conexion
-            conexion.Close();
-            rejilla.DataSource = dataset1.Tables["[Plan-De-Cuentas]"];
 
-            rejilla.Columns["tipo"].HeaderText = "Tipo";
-
-            rejilla.Columns[0].HeaderText = "Descripcion";
-            
         }
         //Consultas del plan de cuentas
         
