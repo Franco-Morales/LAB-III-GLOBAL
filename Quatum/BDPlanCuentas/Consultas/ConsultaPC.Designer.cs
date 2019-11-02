@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPC));
             this.seleccionarTipo = new System.Windows.Forms.ComboBox();
             this.dataSet = new System.Windows.Forms.DataGridView();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.globalDataSet = new Quatum.globalDataSet();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.Modificar = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -40,14 +44,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cuentas = new System.Windows.Forms.GroupBox();
             this.pnlMiddel = new System.Windows.Forms.Panel();
-            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.globalDataSet = new Quatum.globalDataSet();
             this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
-            this.pNToolStrip = new System.Windows.Forms.ToolStrip();
-            this.pNToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,9 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Cuentas.SuspendLayout();
             this.pnlMiddel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
-            this.pNToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // seleccionarTipo
@@ -89,6 +86,30 @@
             this.dataSet.Name = "dataSet";
             this.dataSet.Size = new System.Drawing.Size(384, 311);
             this.dataSet.TabIndex = 1;
+            // 
+            // cuentasdescripcionDataGridViewTextBoxColumn
+            // 
+            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cuentatipoDataGridViewTextBoxColumn
+            // 
+            this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
+            // 
+            // plancuentasBindingSource
+            // 
+            this.plancuentasBindingSource.DataMember = "plan_cuentas";
+            this.plancuentasBindingSource.DataSource = this.globalDataSet;
+            // 
+            // globalDataSet
+            // 
+            this.globalDataSet.DataSetName = "globalDataSet";
+            this.globalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnlTop
             // 
@@ -174,58 +195,15 @@
             this.pnlMiddel.Size = new System.Drawing.Size(384, 311);
             this.pnlMiddel.TabIndex = 4;
             // 
-            // cuentasdescripcionDataGridViewTextBoxColumn
-            // 
-            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cuentatipoDataGridViewTextBoxColumn
-            // 
-            this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
-            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
-            this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
-            // 
-            // plancuentasBindingSource
-            // 
-            this.plancuentasBindingSource.DataMember = "plan_cuentas";
-            this.plancuentasBindingSource.DataSource = this.globalDataSet;
-            // 
-            // globalDataSet
-            // 
-            this.globalDataSet.DataSetName = "globalDataSet";
-            this.globalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // plan_cuentasTableAdapter
             // 
             this.plan_cuentasTableAdapter.ClearBeforeFill = true;
-            // 
-            // pNToolStrip
-            // 
-            this.pNToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pNToolStripButton});
-            this.pNToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.pNToolStrip.Name = "pNToolStrip";
-            this.pNToolStrip.Size = new System.Drawing.Size(111, 25);
-            this.pNToolStrip.TabIndex = 5;
-            this.pNToolStrip.Text = "pNToolStrip";
-            // 
-            // pNToolStripButton
-            // 
-            this.pNToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.pNToolStripButton.Name = "pNToolStripButton";
-            this.pNToolStripButton.Size = new System.Drawing.Size(27, 22);
-            this.pNToolStripButton.Text = "PN";
-            this.pNToolStripButton.Click += new System.EventHandler(this.pNToolStripButton_Click);
             // 
             // ConsultaPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 411);
-            this.Controls.Add(this.pNToolStrip);
             this.Controls.Add(this.pnlMiddel);
             this.Controls.Add(this.pnlTop);
             this.Name = "ConsultaPC";
@@ -233,6 +211,8 @@
             this.Text = "ConsultaPC";
             this.Load += new System.EventHandler(this.ConsultaPC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.Modificar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -241,12 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Cuentas.ResumeLayout(false);
             this.pnlMiddel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).EndInit();
-            this.pNToolStrip.ResumeLayout(false);
-            this.pNToolStrip.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -267,7 +242,5 @@
         private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentasdescripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentatipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStrip pNToolStrip;
-        private System.Windows.Forms.ToolStripButton pNToolStripButton;
     }
 }
