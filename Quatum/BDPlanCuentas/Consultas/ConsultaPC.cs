@@ -40,7 +40,7 @@ namespace Quatum.BDPlanCuentas.Consultas
                 case 2:
                     try
                     {
-                        this.plan_cuentasTableAdapter.Ingresos(this.globalDataSet.plan_cuentas);
+                        this.plan_cuentasTableAdapter.PN(this.globalDataSet.plan_cuentas);
                     }
                     catch (System.Exception ex)
                     {
@@ -51,7 +51,7 @@ namespace Quatum.BDPlanCuentas.Consultas
 
                     try
                     {
-                        this.plan_cuentasTableAdapter.Egresos1(this.globalDataSet.plan_cuentas);
+                        this.plan_cuentasTableAdapter.Ingresos(this.globalDataSet.plan_cuentas);
                     }
                     catch (System.Exception ex)
                     {
@@ -63,7 +63,7 @@ namespace Quatum.BDPlanCuentas.Consultas
 
                     try
                     {
-                        this.plan_cuentasTableAdapter.PN(this.globalDataSet.plan_cuentas);
+                        this.plan_cuentasTableAdapter.Egresos1(this.globalDataSet.plan_cuentas);
                     }
                     catch (System.Exception ex)
                     {
