@@ -69,6 +69,54 @@ WHERE        (cuenta_tipo = 'Activo')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="globalConnectionString (Settings)" DbObjectName="global.plan_cuentas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Egresos" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Egresos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Egresos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `cuentas_id`, `cuentas_descripcion`, `cuenta_tipo` FROM `plan_cuentas`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="globalConnectionString (Settings)" DbObjectName="global.plan_cuentas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Egresos1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Egresos1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Egresos1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        cuentas_id, cuentas_descripcion, cuenta_tipo
+FROM            plan_cuentas
+WHERE        (cuenta_tipo = 'Egreso')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="globalConnectionString (Settings)" DbObjectName="global.plan_cuentas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Ingresos" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Ingresos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Ingresos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        cuentas_id, cuentas_descripcion, cuenta_tipo
+FROM            plan_cuentas
+WHERE        (cuenta_tipo = 'Ingreso')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="globalConnectionString (Settings)" DbObjectName="global.plan_cuentas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Pasivos" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Pasivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Pasivos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        cuentas_id, cuentas_descripcion, cuenta_tipo
+FROM            plan_cuentas
+WHERE        (cuenta_tipo = 'Pasivo')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="globalConnectionString (Settings)" DbObjectName="global.plan_cuentas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="PN" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="PN" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="PN">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        cuentas_id, cuentas_descripcion, cuenta_tipo
+FROM            plan_cuentas
+WHERE        (cuenta_tipo = 'PN')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
         </Tables>
@@ -79,7 +127,7 @@ WHERE        (cuenta_tipo = 'Activo')</CommandText>
   <xs:element name="globalDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="globalDataSet" msprop:Generator_UserDSName="globalDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="plan_cuentas" msprop:Generator_TableClassName="plan_cuentasDataTable" msprop:Generator_TableVarName="tableplan_cuentas" msprop:Generator_RowChangedName="plan_cuentasRowChanged" msprop:Generator_TablePropName="plan_cuentas" msprop:Generator_RowDeletingName="plan_cuentasRowDeleting" msprop:Generator_RowChangingName="plan_cuentasRowChanging" msprop:Generator_RowEvHandlerName="plan_cuentasRowChangeEventHandler" msprop:Generator_RowDeletedName="plan_cuentasRowDeleted" msprop:Generator_RowClassName="plan_cuentasRow" msprop:Generator_UserTableName="plan_cuentas" msprop:Generator_RowEvArgName="plan_cuentasRowChangeEvent">
+        <xs:element name="plan_cuentas" msprop:Generator_TableClassName="plan_cuentasDataTable" msprop:Generator_TableVarName="tableplan_cuentas" msprop:Generator_TablePropName="plan_cuentas" msprop:Generator_RowDeletingName="plan_cuentasRowDeleting" msprop:Generator_RowChangingName="plan_cuentasRowChanging" msprop:Generator_RowEvHandlerName="plan_cuentasRowChangeEventHandler" msprop:Generator_RowDeletedName="plan_cuentasRowDeleted" msprop:Generator_UserTableName="plan_cuentas" msprop:Generator_RowChangedName="plan_cuentasRowChanged" msprop:Generator_RowEvArgName="plan_cuentasRowChangeEvent" msprop:Generator_RowClassName="plan_cuentasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cuentas_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncuentas_id" msprop:Generator_ColumnPropNameInRow="cuentas_id" msprop:Generator_ColumnPropNameInTable="cuentas_idColumn" msprop:Generator_UserColumnName="cuentas_id" type="xs:int" />

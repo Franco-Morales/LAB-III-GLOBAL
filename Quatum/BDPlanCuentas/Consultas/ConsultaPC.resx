@@ -127,7 +127,7 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
         AAAuTElEQVR4Xu3d7bNeZ3XfcUOavOlASJvkXTt9+gfakMy0rzqZTjtJpzRBOkBwkmZIbMIUyYIISZ3B
         RmEoBWMeSixRG0vC1Biw8WQaINBJ22CCaevGMAy4M415CIXq2RJHsmRkLO3uLSwsjKRz3+dce6/r2uuj
         GU8ywzn72uu7fuv3W/e+73POddf5h0BiAq/afVvnv7wMEktf6QgggEBuAsI/b/gPvc+tftUjgAACiQlY
@@ -331,7 +331,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
         AABZPUlEQVR4Xu2dCZhUxbn3cQuuSTRes2tucs1mNjXJzfclufHmevNds9/vuxPo7oEQEolLjFGc6QZE
         R40riDB09zDMdDeiiIxLUBQXVFwAmZ4GxQRNJGZVSVxRQFmnvvf0zCgSYHo5darOqV+epx+N011V519v
         vf9f1alTZ8jW645SJj9D+B8KOKKA6kncoXriis+eNEjc4Ug4cJkoMMSk93p1m28AQYACDiiguhs/K8bf
@@ -719,7 +719,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
         AABADUlEQVR4Xu2dC5gdZZnnmzvKRW4KiDOKOl5Ruajz6LoaFHAVEGVoFZKuqu6OjTOKsI6C46wa5SKO
         4+4y44q4zjqD6KzRR7yug4LxEjDEU1XdiQ26GQkIi0mfqupOAoHc+uz7nXSHkFt3n1NVX331/vI8/UCg
         zzn1/t7/+/7fr07VVz09/IEABCpNoNEaOihqDjwzHg9OHU79c8LUf2eY+UNR5l0VJd6no8S/MUr9r0eZ
@@ -998,5 +998,8 @@
   </data>
   <metadata name="plan_cuentasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
+  </metadata>
+  <metadata name="pNToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>212, 56</value>
   </metadata>
 </root>
