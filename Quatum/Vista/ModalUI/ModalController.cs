@@ -3,7 +3,7 @@
 namespace Quatum.Vista.ModalUI
 {
     /// <summary>
-    /// Controlador del "modal"
+    /// Controlador del "Modal"
     /// </summary>
     class ModalController
     {

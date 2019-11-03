@@ -42,3 +42,19 @@ C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.Li
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.Cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojAssemblyReference.cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroDiarioUI.LibroDiario.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CoreCompileInputs.cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.pdb
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\bin\Debug\MySql.Data.dll
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CopyComplete
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb

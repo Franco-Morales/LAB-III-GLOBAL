@@ -10,6 +10,7 @@
 
 #pragma warning disable 1591
 
+
 namespace Quatum {
     
     
@@ -694,7 +695,7 @@ namespace Quatum.globalDataSetTableAdapters {
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class plan_cuentasTableAdapter : global::System.ComponentModel.Component {
-        
+
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
         private global::MySql.Data.MySqlClient.MySqlConnection _connection;

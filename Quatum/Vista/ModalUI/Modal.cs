@@ -16,7 +16,7 @@ namespace Quatum.Vista.ModalUI
         public Modal()
         {
             InitializeComponent();
-            _ = new ModalController(this);
+            ModalController controlador= new ModalController(this);
         }
     }
 }

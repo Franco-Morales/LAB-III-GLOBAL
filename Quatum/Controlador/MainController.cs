@@ -28,15 +28,19 @@ namespace Quatum.Controlador
             vistaMenu.Exit.Click += new EventHandler(cerrar);
             vistaMenu.LD.Click += new EventHandler(libroDiarioOpen);
             vistaMenu.PlanCuenta.Click += new EventHandler(PlanCuentaOpen);
-            
+            vistaMenu.help.Click += new EventHandler(ayuda);
+
         }
 
 
         #region Gestión de EVENTOS
 
-        private void cerrar(Object sender,EventArgs e)
+        private void cerrar(Object sender, EventArgs e)
         {
-            Application.Exit();
+            if(Mensaje.respuesta(1,"¿Está seguro que desea salir?") == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void maximizar(Object sender, EventArgs e)
@@ -57,6 +61,16 @@ namespace Quatum.Controlador
             vistaMenu.btnMAX.Visible = true;
             vistaMenu.btnRESTORE.Visible = false;
         }
+
+        private void ayuda(Object sender, EventArgs e)
+        {
+            Mensaje.Mostrar(2,"Acción no disponible");
+        }
+
+        private void Excel(Object sender, EventArgs e)
+        {
+            Mensaje.Mostrar(2, "Acción no disponible");
+        }
         #endregion
 
         #region Libro Diario : Eventos
@@ -65,16 +79,14 @@ namespace Quatum.Controlador
         {
             try
             {
-                
                 LibroDiario lbVista = new LibroDiario();
                 lbVista.MdiParent = vistaMenu;
                 lbVista.Dock = DockStyle.Fill;
                 lbVista.Show();
             }
-            catch (Exception exc)
+            catch (Exception)
             {
-                string msj = "Error al abrir el libro diario \nWindows dice :"+ exc.Message;
-                MessageBox.Show(msj,"Libro Diario : Show : Error",MessageBoxButtons.OK,MessageBoxIcon.Error);   
+                Mensaje.Mostrar(0, "Error al abrir el libro diario");  
             }
             
         }
@@ -88,10 +100,10 @@ namespace Quatum.Controlador
             try {
                 ConsultaPC pcVista = new ConsultaPC();
                 pcVista.Show();
-            } catch (Exception exc) {
-                string msj = "Error al abrir el Plan de Cuentas \nWindows dice :" + exc.Message;
-                MessageBox.Show(msj,"Pland de Cuentas : Show : Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                
+            }
+            catch (Exception)
+            { 
+                Mensaje.Mostrar(0, "Error al abrir el plan de cuentas");
             }
         }
 

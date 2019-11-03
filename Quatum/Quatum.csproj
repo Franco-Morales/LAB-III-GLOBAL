@@ -76,6 +76,7 @@
       <DependentUpon>ConsultaPC.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlador\MainController.cs" />
+    <Compile Include="Controlador\Mensaje.cs" />
     <Compile Include="globalDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
