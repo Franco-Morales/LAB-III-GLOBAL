@@ -75,3 +75,6 @@ C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.V
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.MenuPrincipalUI.MenuPrincipal.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.ModalUI.Modal.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.Cache
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\MySql.Data.dll
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.Agregar.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CoreCompileInputs.cache

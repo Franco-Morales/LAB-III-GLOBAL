@@ -13,6 +13,11 @@ namespace Quatum.Controlador
     {
         private MenuPrincipal vistaMenu;
 
+        /// <summary>
+        /// Estado de la interfaz
+        /// TRUE = Cambios guardados | FALSE = Cambios sin guardar
+        /// </summary>
+        public static bool estado = true;
 
         public MainController() { }
 
@@ -37,10 +42,14 @@ namespace Quatum.Controlador
 
         private void cerrar(Object sender, EventArgs e)
         {
-            if(Mensaje.respuesta(1,"¿Está seguro que desea salir?") == DialogResult.Yes)
+            if (estado)
             {
                 Application.Exit();
             }
+            else if(Mensaje.respuesta(1,"¿Está seguro que desea salir?\nLos cambios no han sido guardados") == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
         }
 
         private void maximizar(Object sender, EventArgs e)
@@ -99,7 +108,7 @@ namespace Quatum.Controlador
         {
             try {
                 ConsultaPC pcVista = new ConsultaPC();
-                pcVista.Show();
+                pcVista.ShowDialog();
             }
             catch (Exception)
             { 

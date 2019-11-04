@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Quatum.Controlador;
+
 namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
@@ -27,7 +28,8 @@ namespace Quatum.BDPlanCuentas.Consultas
                     }
                     catch (System.Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        Mensaje.Mostrar(0, ex.Message);
+                        //System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
                     break;
                 case 1:
@@ -37,7 +39,8 @@ namespace Quatum.BDPlanCuentas.Consultas
                     }
                     catch (System.Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        Mensaje.Mostrar(0, ex.Message);
+                        //System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
                     break;
                 case 2:
@@ -47,7 +50,8 @@ namespace Quatum.BDPlanCuentas.Consultas
                     }
                     catch (System.Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        Mensaje.Mostrar(0, ex.Message);
+                        //System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
                     break;
                 case 3:
@@ -58,7 +62,8 @@ namespace Quatum.BDPlanCuentas.Consultas
                     }
                     catch (System.Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        Mensaje.Mostrar(0, ex.Message);
+                        //System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
 
                     break;
@@ -70,7 +75,8 @@ namespace Quatum.BDPlanCuentas.Consultas
                     }
                     catch (System.Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        Mensaje.Mostrar(0, ex.Message);
+                        //System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
 
                     break;
@@ -112,11 +118,12 @@ namespace Quatum.BDPlanCuentas.Consultas
            try
             {
                 conexion.Open();
-                MessageBox.Show("Borrado con exito");
+                Mensaje.Mostrar(0, "Borrado con exito");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la conexion , excepcion:" + ex.Message + MessageBoxIcon.Error);
+                string mensaje = "Error en la conexion , excepcion:" + ex.Message;
+                Mensaje.Mostrar(0,mensaje);
                 throw;
             }
             MySqlDataReader reader = comando.ExecuteReader();

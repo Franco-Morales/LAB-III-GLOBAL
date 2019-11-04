@@ -32,27 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPC));
             this.seleccionarTipo = new System.Windows.Forms.ComboBox();
             this.dataSet = new System.Windows.Forms.DataGridView();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalDataSet = new Quatum.globalDataSet();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.Modificar = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnMod = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.Cuentas = new System.Windows.Forms.GroupBox();
             this.pnlMiddel = new System.Windows.Forms.Panel();
             this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
-            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.Modificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             this.Cuentas.SuspendLayout();
             this.pnlMiddel.SuspendLayout();
             this.SuspendLayout();
@@ -90,97 +90,6 @@
             this.dataSet.Size = new System.Drawing.Size(384, 311);
             this.dataSet.TabIndex = 1;
             // 
-            // plancuentasBindingSource
-            // 
-            this.plancuentasBindingSource.DataMember = "plan_cuentas";
-            this.plancuentasBindingSource.DataSource = this.globalDataSet;
-            // 
-            // globalDataSet
-            // 
-            this.globalDataSet.DataSetName = "globalDataSet";
-            this.globalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.Controls.Add(this.Modificar);
-            this.pnlTop.Controls.Add(this.Cuentas);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(384, 100);
-            this.pnlTop.TabIndex = 2;
-            // 
-            // Modificar
-            // 
-            this.Modificar.Controls.Add(this.pictureBox4);
-            this.Modificar.Controls.Add(this.pictureBox2);
-            this.Modificar.Controls.Add(this.pictureBox1);
-            this.Modificar.Location = new System.Drawing.Point(222, 12);
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(150, 82);
-            this.Modificar.TabIndex = 2;
-            this.Modificar.TabStop = false;
-            this.Modificar.Text = "Modificar plan de Cuenta";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(114, 46);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(60, 46);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // Cuentas
-            // 
-            this.Cuentas.Controls.Add(this.seleccionarTipo);
-            this.Cuentas.Location = new System.Drawing.Point(13, 12);
-            this.Cuentas.Name = "Cuentas";
-            this.Cuentas.Size = new System.Drawing.Size(133, 60);
-            this.Cuentas.TabIndex = 1;
-            this.Cuentas.TabStop = false;
-            this.Cuentas.Text = "Cuentas";
-            // 
-            // pnlMiddel
-            // 
-            this.pnlMiddel.Controls.Add(this.dataSet);
-            this.pnlMiddel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddel.Location = new System.Drawing.Point(0, 100);
-            this.pnlMiddel.Name = "pnlMiddel";
-            this.pnlMiddel.Size = new System.Drawing.Size(384, 311);
-            this.pnlMiddel.TabIndex = 4;
-            // 
-            // plan_cuentasTableAdapter
-            // 
-            this.plan_cuentasTableAdapter.ClearBeforeFill = true;
-            // 
             // cuentasdescripcionDataGridViewTextBoxColumn
             // 
             this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
@@ -205,6 +114,97 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
+            // plancuentasBindingSource
+            // 
+            this.plancuentasBindingSource.DataMember = "plan_cuentas";
+            this.plancuentasBindingSource.DataSource = this.globalDataSet;
+            // 
+            // globalDataSet
+            // 
+            this.globalDataSet.DataSetName = "globalDataSet";
+            this.globalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.Controls.Add(this.Modificar);
+            this.pnlTop.Controls.Add(this.Cuentas);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(384, 100);
+            this.pnlTop.TabIndex = 2;
+            // 
+            // Modificar
+            // 
+            this.Modificar.Controls.Add(this.btnDelete);
+            this.Modificar.Controls.Add(this.btnMod);
+            this.Modificar.Controls.Add(this.btnAgregar);
+            this.Modificar.Location = new System.Drawing.Point(222, 12);
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Size = new System.Drawing.Size(150, 82);
+            this.Modificar.TabIndex = 2;
+            this.Modificar.TabStop = false;
+            this.Modificar.Text = "Modificar plan de Cuenta";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(114, 46);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(30, 30);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // btnMod
+            // 
+            this.btnMod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMod.Image = ((System.Drawing.Image)(resources.GetObject("btnMod.Image")));
+            this.btnMod.Location = new System.Drawing.Point(60, 46);
+            this.btnMod.Name = "btnMod";
+            this.btnMod.Size = new System.Drawing.Size(30, 30);
+            this.btnMod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMod.TabIndex = 1;
+            this.btnMod.TabStop = false;
+            this.btnMod.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(6, 46);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(30, 30);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Cuentas
+            // 
+            this.Cuentas.Controls.Add(this.seleccionarTipo);
+            this.Cuentas.Location = new System.Drawing.Point(13, 12);
+            this.Cuentas.Name = "Cuentas";
+            this.Cuentas.Size = new System.Drawing.Size(133, 60);
+            this.Cuentas.TabIndex = 1;
+            this.Cuentas.TabStop = false;
+            this.Cuentas.Text = "Cuentas";
+            // 
+            // pnlMiddel
+            // 
+            this.pnlMiddel.Controls.Add(this.dataSet);
+            this.pnlMiddel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddel.Location = new System.Drawing.Point(0, 100);
+            this.pnlMiddel.Name = "pnlMiddel";
+            this.pnlMiddel.Size = new System.Drawing.Size(384, 311);
+            this.pnlMiddel.TabIndex = 4;
+            // 
+            // plan_cuentasTableAdapter
+            // 
+            this.plan_cuentasTableAdapter.ClearBeforeFill = true;
+            // 
             // ConsultaPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,9 +221,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.Modificar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             this.Cuentas.ResumeLayout(false);
             this.pnlMiddel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -238,9 +238,9 @@
         private System.Windows.Forms.Panel pnlMiddel;
         private System.Windows.Forms.GroupBox Cuentas;
         private System.Windows.Forms.GroupBox Modificar;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnDelete;
+        private System.Windows.Forms.PictureBox btnMod;
+        private System.Windows.Forms.PictureBox btnAgregar;
         private globalDataSet globalDataSet;
         private System.Windows.Forms.BindingSource plancuentasBindingSource;
         private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;

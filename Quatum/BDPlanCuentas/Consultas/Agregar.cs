@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Quatum.Controlador;
 
 namespace Quatum.BDPlanCuentas.Consultas
 {
@@ -68,7 +62,6 @@ namespace Quatum.BDPlanCuentas.Consultas
             comando.CommandText = "INSERT INTO plan_cuentas (cuentas_descripcion, cuenta_tipo) VALUES ('" + descripcionCMB + "','" + tipoCMB + "')";
             try
             {
-
                 conexion.Open();
                 this.Close();
                 MessageBox.Show("Creado con exito");
@@ -77,7 +70,8 @@ namespace Quatum.BDPlanCuentas.Consultas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la conexion , excepcion:" + ex.Message + MessageBoxIcon.Error);
+                string mensaje = "Error en la conexion \n Excepcion: "+ex.Message;
+                Mensaje.Mostrar(0, mensaje);
                 throw;
             }
             MySqlDataReader reader = comando.ExecuteReader();
