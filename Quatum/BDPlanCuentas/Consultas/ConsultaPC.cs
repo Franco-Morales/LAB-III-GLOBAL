@@ -81,6 +81,14 @@ namespace Quatum.BDPlanCuentas.Consultas
             //this.plan_cuentasTableAdapter.Fill(this.globalDataSet.plan_cuentas);
 
         }
+        Agregar agregar;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+            agregar = new Agregar();
+
+            agregar.Show();
+        }
 
     }
 }

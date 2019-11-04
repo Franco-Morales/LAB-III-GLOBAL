@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDPlanCuentas\Consultas\Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDPlanCuentas\Consultas\Agregar.Designer.cs">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="BDPlanCuentas\Consultas\ConsultaPC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>globalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="globalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>globalDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +115,9 @@
       <DependentUpon>Modal.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\ModalUI\ModalController.cs" />
+    <EmbeddedResource Include="BDPlanCuentas\Consultas\Agregar.resx">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BDPlanCuentas\Consultas\ConsultaPC.resx">
       <DependentUpon>ConsultaPC.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +149,17 @@
     </None>
     <None Include="globalDataSet.xss">
       <DependentUpon>globalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="globalDataSet1.xsc">
+      <DependentUpon>globalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="globalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>globalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="globalDataSet1.xss">
+      <DependentUpon>globalDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
