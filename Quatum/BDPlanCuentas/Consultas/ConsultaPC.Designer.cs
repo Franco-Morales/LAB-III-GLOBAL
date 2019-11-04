@@ -32,26 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPC));
             this.seleccionarTipo = new System.Windows.Forms.ComboBox();
             this.dataSet = new System.Windows.Forms.DataGridView();
-            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalDataSet = new Quatum.globalDataSet();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.Modificar = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cuentas = new System.Windows.Forms.GroupBox();
             this.pnlMiddel = new System.Windows.Forms.Panel();
             this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Cuentas.SuspendLayout();
@@ -81,7 +80,8 @@
             this.dataSet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cuentasdescripcionDataGridViewTextBoxColumn,
-            this.cuentatipoDataGridViewTextBoxColumn});
+            this.cuentatipoDataGridViewTextBoxColumn,
+            this.Column1});
             this.dataSet.DataSource = this.plancuentasBindingSource;
             this.dataSet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataSet.Location = new System.Drawing.Point(0, 0);
@@ -89,20 +89,6 @@
             this.dataSet.ReadOnly = true;
             this.dataSet.Size = new System.Drawing.Size(384, 311);
             this.dataSet.TabIndex = 1;
-            // 
-            // cuentasdescripcionDataGridViewTextBoxColumn
-            // 
-            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cuentatipoDataGridViewTextBoxColumn
-            // 
-            this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
-            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
-            this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
             // 
             // plancuentasBindingSource
             // 
@@ -127,7 +113,6 @@
             // Modificar
             // 
             this.Modificar.Controls.Add(this.pictureBox4);
-            this.Modificar.Controls.Add(this.pictureBox3);
             this.Modificar.Controls.Add(this.pictureBox2);
             this.Modificar.Controls.Add(this.pictureBox1);
             this.Modificar.Location = new System.Drawing.Point(222, 12);
@@ -147,26 +132,19 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(78, 46);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(42, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(60, 46);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -203,6 +181,30 @@
             // 
             this.plan_cuentasTableAdapter.ClearBeforeFill = true;
             // 
+            // cuentasdescripcionDataGridViewTextBoxColumn
+            // 
+            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cuentatipoDataGridViewTextBoxColumn
+            // 
+            this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
+            this.cuentatipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "cuentas_id";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // ConsultaPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,7 +222,6 @@
             this.pnlTop.ResumeLayout(false);
             this.Modificar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Cuentas.ResumeLayout(false);
@@ -238,7 +239,6 @@
         private System.Windows.Forms.GroupBox Cuentas;
         private System.Windows.Forms.GroupBox Modificar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private globalDataSet globalDataSet;
@@ -246,5 +246,6 @@
         private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentasdescripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentatipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

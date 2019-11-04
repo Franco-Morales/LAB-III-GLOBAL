@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
@@ -9,6 +10,7 @@ namespace Quatum.BDPlanCuentas.Consultas
         public ConsultaPC()
         {
             InitializeComponent();
+            dataSet.MultiSelect = false;
         }
         private void seleccionarTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -88,6 +90,36 @@ namespace Quatum.BDPlanCuentas.Consultas
             agregar = new Agregar();
 
             agregar.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
+            //Comando de SQL
+            MySqlCommand comando = conexion.CreateCommand();
+            if (dataSet.CurrentRow != null) {
+                 //Current row es selda seleccionada actualmente
+                int id = int.Parse(dataSet.CurrentRow.Cells[2].Value.ToString());
+                comando.CommandText = "DELETE FROM plan_cuentas WHERE (plan_cuentas.cuentas_id = "+ id +")";
+            }
+            MessageBox.Show("Borrado con exito");
+           try
+            {
+                conexion.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la conexion , excepcion:" + ex.Message + MessageBoxIcon.Error);
+                throw;
+            }
+            MySqlDataReader reader = comando.ExecuteReader();
+            conexion.Close();
+            dataSet.Refresh();
         }
 
     }
