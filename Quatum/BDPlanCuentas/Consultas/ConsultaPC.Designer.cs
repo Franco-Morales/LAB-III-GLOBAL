@@ -184,7 +184,7 @@
             // cuentasdescripcionDataGridViewTextBoxColumn
             // 
             this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
             this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
             this.cuentasdescripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -193,7 +193,7 @@
             // cuentatipoDataGridViewTextBoxColumn
             // 
             this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
-            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
             this.cuentatipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 

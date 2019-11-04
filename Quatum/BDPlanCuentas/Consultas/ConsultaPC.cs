@@ -6,11 +6,12 @@ namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
     {
-
+        Agregar agregar;
         public ConsultaPC()
         {
             InitializeComponent();
-            dataSet.MultiSelect = false;
+            dataSet.MultiSelect = false;//No se permite seleccionar muchas celdas
+            seleccionarTipo.SelectedIndex = 0;//Empieza el combobox en el indice 1
         }
         private void seleccionarTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -83,12 +84,12 @@ namespace Quatum.BDPlanCuentas.Consultas
             //this.plan_cuentasTableAdapter.Fill(this.globalDataSet.plan_cuentas);
 
         }
-        Agregar agregar;
+      
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             
             agregar = new Agregar();
-
+            this.Close();
             agregar.Show();
         }
 
@@ -102,15 +103,16 @@ namespace Quatum.BDPlanCuentas.Consultas
             MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
             //Comando de SQL
             MySqlCommand comando = conexion.CreateCommand();
-            if (dataSet.CurrentRow != null) {
-                 //Current row es selda seleccionada actualmente
+                if (dataSet.CurrentRow != null)
+            {
+                //Current row es la celda seleccionada actualmente
                 int id = int.Parse(dataSet.CurrentRow.Cells[2].Value.ToString());
-                comando.CommandText = "DELETE FROM plan_cuentas WHERE (plan_cuentas.cuentas_id = "+ id +")";
+                comando.CommandText = "DELETE FROM plan_cuentas WHERE (plan_cuentas.cuentas_id = " + id + ")";
             }
-            MessageBox.Show("Borrado con exito");
            try
             {
                 conexion.Open();
+                MessageBox.Show("Borrado con exito");
             }
             catch (Exception ex)
             {
@@ -119,7 +121,6 @@ namespace Quatum.BDPlanCuentas.Consultas
             }
             MySqlDataReader reader = comando.ExecuteReader();
             conexion.Close();
-            dataSet.Refresh();
         }
 
     }

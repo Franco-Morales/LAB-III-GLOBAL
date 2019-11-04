@@ -70,7 +70,10 @@ namespace Quatum.BDPlanCuentas.Consultas
             {
 
                 conexion.Open();
+                this.Close();
                 MessageBox.Show("Creado con exito");
+                ConsultaPC nuevo = new ConsultaPC();
+                nuevo.Show();
             }
             catch (Exception ex)
             {
