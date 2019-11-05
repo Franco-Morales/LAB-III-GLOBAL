@@ -45,8 +45,8 @@
             this.LD = new System.Windows.Forms.ToolStripMenuItem();
             this.Inv = new System.Windows.Forms.ToolStripMenuItem();
             this.PlanCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMarco = new System.Windows.Forms.Panel();
             this.help = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMarco = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRESTORE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMAX)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             // ICONO
             // 
-            this.ICONO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.ICONO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ICONO.Image = ((System.Drawing.Image)(resources.GetObject("ICONO.Image")));
             this.ICONO.Location = new System.Drawing.Point(12, 12);
@@ -71,7 +71,7 @@
             // 
             // btnRESTORE
             // 
-            this.btnRESTORE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnRESTORE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRESTORE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRESTORE.Image = ((System.Drawing.Image)(resources.GetObject("btnRESTORE.Image")));
@@ -85,7 +85,7 @@
             // 
             // btnMAX
             // 
-            this.btnMAX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnMAX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMAX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMAX.Image = ((System.Drawing.Image)(resources.GetObject("btnMAX.Image")));
@@ -98,7 +98,7 @@
             // 
             // btnCLOSE
             // 
-            this.btnCLOSE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnCLOSE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCLOSE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLOSE.Image = ((System.Drawing.Image)(resources.GetObject("btnCLOSE.Image")));
@@ -111,7 +111,7 @@
             // 
             // btnMIN
             // 
-            this.btnMIN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnMIN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMIN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMIN.Image = ((System.Drawing.Image)(resources.GetObject("btnMIN.Image")));
@@ -228,6 +228,14 @@
             this.PlanCuenta.Size = new System.Drawing.Size(133, 26);
             this.PlanCuenta.Text = "Plan de Cuentas";
             // 
+            // help
+            // 
+            this.help.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.help.ForeColor = System.Drawing.Color.White;
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(66, 26);
+            this.help.Text = "Ayuda";
+            // 
             // pnlMarco
             // 
             this.pnlMarco.Controls.Add(this.menu);
@@ -237,14 +245,6 @@
             this.pnlMarco.Name = "pnlMarco";
             this.pnlMarco.Size = new System.Drawing.Size(1000, 94);
             this.pnlMarco.TabIndex = 3;
-            // 
-            // help
-            // 
-            this.help.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.help.ForeColor = System.Drawing.Color.White;
-            this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(66, 26);
-            this.help.Text = "Ayuda";
             // 
             // MenuPrincipal
             // 
@@ -286,12 +286,12 @@
         private System.Windows.Forms.ToolStripMenuItem Archivo;
         private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exportar;
-        private System.Windows.Forms.ToolStripMenuItem Inv;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMarco;
         public System.Windows.Forms.ToolStripMenuItem LD;
         public System.Windows.Forms.ToolStripMenuItem Exit;
         public System.Windows.Forms.ToolStripMenuItem help;
         public System.Windows.Forms.ToolStripMenuItem PlanCuenta;
+        public System.Windows.Forms.ToolStripMenuItem Inv;
     }
 }

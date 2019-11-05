@@ -12,12 +12,16 @@ namespace Quatum.Vista.ModalUI
     /// </summary>
     class ModalController
     {
+
         int aumentar;//auxiliar para el boton aumentar
         int disminuir;//auxiliar para el boton disminuir
-        Boolean estado = false;//Control de que se debe mostrar o no
+        bool estado = false;//Control de que se debe mostrar o no
         Modal ventana;
         Mensaje mensaje = new Mensaje();
+
+
         public ModalController() { }
+
 
         public ModalController(Modal ventanaEmergente)
         {
@@ -27,6 +31,9 @@ namespace Quatum.Vista.ModalUI
             ventana.btnDisminuir.Click += new EventHandler(btnDisminuir_Click);
             ventana.btnAceptar.Click += new EventHandler(btnACeptar_Click);
         }
+
+
+
         private void btnAumentar_Click(object sender, EventArgs e)
         {
             aumentar = int.Parse(ventana.textCantidad.Text);
@@ -36,20 +43,23 @@ namespace Quatum.Vista.ModalUI
             if (aumentar == 5)
             {
                 ventana.btnAumentar.Enabled = false;
-                Mensaje.Mostrar(0, "Se puede como maximo usar 5 cuentas");
+                Mensaje.Mostrar(0, "El máximo de cuentas permitidos es 5");
             }
         }
+
 
         private void btnDisminuir_Click(object sender, EventArgs e)
         {
             disminuir = int.Parse(ventana.textCantidad.Text);
             disminuir--;
+
             ventana.textCantidad.Text = disminuir.ToString();
             ventana.btnAumentar.Enabled = true;
+
             if (disminuir == 2)
             {
                 ventana.btnDisminuir.Enabled = false;
-                Mensaje.Mostrar(0, "Se puede como minimo usar 2 cuentas");
+                Mensaje.Mostrar(0, "El mínimo de cuentas permitidos es 2");
                 
             }
         }
@@ -60,11 +70,14 @@ namespace Quatum.Vista.ModalUI
             top(estado);
             estado = true;
             loadPanel(estado);
-            TextBox txt = new TextBox();
+            /*TextBox txt = new TextBox();
             txt.Text = cantidad.ToString();
-            ventana.panelDescripcion.Controls.Add(txt);
+            ventana.panelDescripcion.Controls.Add(txt);*/
         }
+
         private void top(Boolean estado) {
+            ventana.pblTop.Enabled = estado;
+            /*
             ventana.btnAumentar.Enabled = estado;
             ventana.btnDisminuir.Enabled = estado;
             ventana.btnAumentar.Visible = estado;
@@ -72,15 +85,12 @@ namespace Quatum.Vista.ModalUI
             ventana.textCantidad.Visible = estado;
             ventana.label1.Visible = estado;
             ventana.btnAceptar.Visible = estado;
-            
+            */
         }
+
         private void loadPanel(Boolean estado) {
             //Estado de los paneles
-            ventana.panelHaber.Visible = estado;
-            ventana.panelDescripcion.Visible = estado;
-            ventana.panelFecha.Visible = estado;
-            ventana.panelHeader.Visible = estado;
-            ventana.panelDebe.Visible = estado;
+            ventana.pnlFill.Enabled = estado;
         }
        
     }

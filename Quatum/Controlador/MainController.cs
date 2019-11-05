@@ -34,7 +34,7 @@ namespace Quatum.Controlador
             vistaMenu.LD.Click += new EventHandler(libroDiarioOpen);
             vistaMenu.PlanCuenta.Click += new EventHandler(PlanCuentaOpen);
             vistaMenu.help.Click += new EventHandler(ayuda);
-
+            vistaMenu.Inv.Click += new EventHandler(inventario);
         }
 
 
@@ -74,6 +74,11 @@ namespace Quatum.Controlador
         private void ayuda(Object sender, EventArgs e)
         {
             Mensaje.Mostrar(2,"Acción no disponible");
+        }
+
+        private void inventario(Object sender, EventArgs e)
+        {
+            Mensaje.Mostrar(2, "Acción no disponible");
         }
 
         private void Excel(Object sender, EventArgs e)

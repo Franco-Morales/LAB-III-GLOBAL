@@ -69,12 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDPlanCuentas\Consultas\Actualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BDPlanCuentas\Consultas\Actualizar.Designer.cs">
-      <DependentUpon>Actualizar.cs</DependentUpon>
-    </Compile>
     <Compile Include="BDPlanCuentas\Consultas\AgregarActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +115,6 @@
       <DependentUpon>Modal.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\ModalUI\ModalController.cs" />
-    <EmbeddedResource Include="BDPlanCuentas\Consultas\Actualizar.resx">
-      <DependentUpon>Actualizar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BDPlanCuentas\Consultas\AgregarActualizar.resx">
       <DependentUpon>AgregarActualizar.cs</DependentUpon>
     </EmbeddedResource>
