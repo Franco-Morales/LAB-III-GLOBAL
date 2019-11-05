@@ -17,15 +17,9 @@ namespace Quatum.Vista.ModalUI
         {
             InitializeComponent();
             ModalController controlador = new ModalController(this);
+            textCantidad.Text = "2";
+            btnDisminuir.Enabled = false;
         }
-
-        private void Modal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'globalDataSet1.asientos' Puede moverla o quitarla según sea necesario.
-            this.asientosTableAdapter.Fill(this.globalDataSet1.asientos);
-
-        }
-
     }
 
 }

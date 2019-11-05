@@ -232,20 +232,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox seleccionarTipo;
-        private System.Windows.Forms.DataGridView dataSet;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlMiddel;
         private System.Windows.Forms.GroupBox Cuentas;
         private System.Windows.Forms.GroupBox Modificar;
-        private System.Windows.Forms.PictureBox btnDelete;
-        private System.Windows.Forms.PictureBox btnMod;
-        private System.Windows.Forms.PictureBox btnAgregar;
         private globalDataSet globalDataSet;
         private System.Windows.Forms.BindingSource plancuentasBindingSource;
         private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentasdescripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentatipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        public System.Windows.Forms.DataGridView dataSet;
+        public System.Windows.Forms.PictureBox btnDelete;
+        public System.Windows.Forms.PictureBox btnMod;
+        public System.Windows.Forms.PictureBox btnAgregar;
+        public System.Windows.Forms.ComboBox seleccionarTipo;
     }
 }

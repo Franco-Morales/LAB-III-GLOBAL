@@ -1,6 +1,6 @@
 ﻿namespace Quatum.BDPlanCuentas.Consultas
 {
-    partial class Agregar
+    partial class AgregarActualizar
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.tipo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.descripcion = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.descripcion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,17 +86,32 @@
             this.descripcion.TabStop = false;
             this.descripcion.Text = "Descripción";
             // 
-            // Agregar
+            // btnActualizar
+            // 
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(172, 40);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 30);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // AgregarActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(165)))), ((int)(((byte)(171)))));
             this.ClientSize = new System.Drawing.Size(284, 111);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.descripcion);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "Agregar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Name = "AgregarActualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
             this.descripcion.ResumeLayout(false);
             this.descripcion.PerformLayout();
@@ -107,7 +123,8 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox tipo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox descripcion;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnActualizar;
     }
 }

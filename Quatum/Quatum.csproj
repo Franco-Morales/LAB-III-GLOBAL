@@ -69,11 +69,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDPlanCuentas\Consultas\Agregar.cs">
+    <Compile Include="BDPlanCuentas\Consultas\Actualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BDPlanCuentas\Consultas\Agregar.Designer.cs">
-      <DependentUpon>Agregar.cs</DependentUpon>
+    <Compile Include="BDPlanCuentas\Consultas\Actualizar.Designer.cs">
+      <DependentUpon>Actualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BDPlanCuentas\Consultas\AgregarActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDPlanCuentas\Consultas\AgregarActualizar.Designer.cs">
+      <DependentUpon>AgregarActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="BDPlanCuentas\Consultas\ConsultaPC.cs">
       <SubType>Form</SubType>
@@ -115,8 +121,11 @@
       <DependentUpon>Modal.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\ModalUI\ModalController.cs" />
-    <EmbeddedResource Include="BDPlanCuentas\Consultas\Agregar.resx">
-      <DependentUpon>Agregar.cs</DependentUpon>
+    <EmbeddedResource Include="BDPlanCuentas\Consultas\Actualizar.resx">
+      <DependentUpon>Actualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BDPlanCuentas\Consultas\AgregarActualizar.resx">
+      <DependentUpon>AgregarActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BDPlanCuentas\Consultas\ConsultaPC.resx">
       <DependentUpon>ConsultaPC.cs</DependentUpon>

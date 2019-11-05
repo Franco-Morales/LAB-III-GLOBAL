@@ -68,7 +68,6 @@ C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.p
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.pdb
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojResolveAssemblyReference.cache
-C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.Agregar.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.ConsultaPC.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroDiarioUI.LibroDiario.resources
@@ -78,3 +77,5 @@ C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.c
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\MySql.Data.dll
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.Agregar.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CoreCompileInputs.cache
+C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.Actualizar.resources
+C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources

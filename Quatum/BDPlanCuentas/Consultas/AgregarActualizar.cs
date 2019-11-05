@@ -5,15 +5,18 @@ using Quatum.Controlador;
 
 namespace Quatum.BDPlanCuentas.Consultas
 {
-    public partial class Agregar : Form
+    public partial class AgregarActualizar : Form
     {
         String tipoCMB;
         String descripcionCMB;
-        public Agregar()
+        ConsultaPC nuevo;
+        public AgregarActualizar(ConsultaPC consulta)
         {
             InitializeComponent();
             tipo.SelectedIndex = 0;
             button1.Enabled = false;
+            btnActualizar.Enabled = false;
+            nuevo = consulta;
         }
 
         private void tipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace Quatum.BDPlanCuentas.Consultas
         {
             if (textBox1.Text != null) {
                 button1.Enabled = true;
-                
+                btnActualizar.Enabled = true;
             }
         }
 
@@ -49,6 +52,7 @@ namespace Quatum.BDPlanCuentas.Consultas
             button1.Enabled = false;
             if(char.IsControl(e.KeyChar)){
                 button1.Enabled = false;
+
             }
         }
 
@@ -65,12 +69,41 @@ namespace Quatum.BDPlanCuentas.Consultas
                 conexion.Open();
                 this.Close();
                 MessageBox.Show("Creado con exito");
-                ConsultaPC nuevo = new ConsultaPC();
-                nuevo.Show();
             }
             catch (Exception ex)
             {
                 string mensaje = "Error en la conexion \n Excepcion: "+ex.Message;
+                Mensaje.Mostrar(0, mensaje);
+                throw;
+            }
+            MySqlDataReader reader = comando.ExecuteReader();
+            conexion.Close();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            descripcionCMB = textBox1.Text;
+            MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
+            //Comando de SQL
+            MySqlCommand comando = conexion.CreateCommand();
+            
+            if (nuevo.dataSet.CurrentRow != null)
+            {
+                //Current row es la celda seleccionada actualmente
+                int id = int.Parse(nuevo.dataSet.CurrentRow.Cells[2].Value.ToString());
+                comando.CommandText =
+                "UPDATE plan_cuentas SET cuentas_descripcion = '" + descripcionCMB + "', cuenta_tipo = '" + tipoCMB + "' WHERE (plan_cuentas.cuentas_id = " + id + ")";
+
+                nuevo.btnMod.Enabled = true;
+            }
+            try
+            {
+                conexion.Open();
+                Mensaje.Mostrar(2, "Actualizado correctamente");
+            }
+            catch (Exception ex)
+            {
+                string mensaje = "Error en la conexion , excepcion:" + ex.Message;
                 Mensaje.Mostrar(0, mensaje);
                 throw;
             }
