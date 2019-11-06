@@ -88,10 +88,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>globalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="globalDataSet1.Designer.cs">
+    <Compile Include="globalDataSetLibroDiario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>globalDataSet1.xsd</DependentUpon>
+      <DependentUpon>globalDataSetLibroDiario.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,16 +150,16 @@
     <None Include="globalDataSet.xss">
       <DependentUpon>globalDataSet.xsd</DependentUpon>
     </None>
-    <None Include="globalDataSet1.xsc">
-      <DependentUpon>globalDataSet1.xsd</DependentUpon>
+    <None Include="globalDataSetLibroDiario.xsc">
+      <DependentUpon>globalDataSetLibroDiario.xsd</DependentUpon>
     </None>
-    <None Include="globalDataSet1.xsd">
+    <None Include="globalDataSetLibroDiario.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>globalDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>globalDataSetLibroDiario.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="globalDataSet1.xss">
-      <DependentUpon>globalDataSet1.xsd</DependentUpon>
+    <None Include="globalDataSetLibroDiario.xss">
+      <DependentUpon>globalDataSetLibroDiario.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

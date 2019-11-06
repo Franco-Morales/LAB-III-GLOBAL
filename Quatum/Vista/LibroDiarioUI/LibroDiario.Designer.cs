@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibroDiario));
             this.pnlUno = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -37,12 +38,28 @@
             this.Container = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
             this.actions = new System.Windows.Forms.Panel();
+            this.globalDataSetLibroDiario = new Quatum.globalDataSetLibroDiario();
+            this.globalDataSetLibroDiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1TableAdapter = new Quatum.globalDataSetLibroDiarioTableAdapters.DataTable1TableAdapter();
+            this.asientoreferenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientofechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientovalorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentatipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlUno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLOSE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.Container.SuspendLayout();
             this.pnlData.SuspendLayout();
             this.actions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUno
@@ -100,8 +117,20 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(126)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.asientoreferenciaDataGridViewTextBoxColumn,
+            this.asientofechaDataGridViewTextBoxColumn,
+            this.cuentasdescripcionDataGridViewTextBoxColumn,
+            this.asientovalorDataGridViewTextBoxColumn,
+            this.asientotipoDataGridViewTextBoxColumn,
+            this.cuentasDataGridViewTextBoxColumn,
+            this.cuentasidDataGridViewTextBoxColumn,
+            this.cuentatipoDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.dataTable1BindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.White;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
@@ -138,6 +167,92 @@
             this.actions.Size = new System.Drawing.Size(800, 70);
             this.actions.TabIndex = 2;
             // 
+            // globalDataSetLibroDiario
+            // 
+            this.globalDataSetLibroDiario.DataSetName = "globalDataSetLibroDiario";
+            this.globalDataSetLibroDiario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // globalDataSetLibroDiarioBindingSource
+            // 
+            this.globalDataSetLibroDiarioBindingSource.DataSource = this.globalDataSetLibroDiario;
+            this.globalDataSetLibroDiarioBindingSource.Position = 0;
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.globalDataSetLibroDiarioBindingSource;
+            // 
+            // dataTable1TableAdapter
+            // 
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // asientoreferenciaDataGridViewTextBoxColumn
+            // 
+            this.asientoreferenciaDataGridViewTextBoxColumn.DataPropertyName = "asiento_referencia";
+            this.asientoreferenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
+            this.asientoreferenciaDataGridViewTextBoxColumn.Name = "asientoreferenciaDataGridViewTextBoxColumn";
+            this.asientoreferenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientofechaDataGridViewTextBoxColumn
+            // 
+            this.asientofechaDataGridViewTextBoxColumn.DataPropertyName = "asiento_fecha";
+            this.asientofechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.asientofechaDataGridViewTextBoxColumn.Name = "asientofechaDataGridViewTextBoxColumn";
+            this.asientofechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cuentasdescripcionDataGridViewTextBoxColumn
+            // 
+            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientovalorDataGridViewTextBoxColumn
+            // 
+            this.asientovalorDataGridViewTextBoxColumn.DataPropertyName = "asiento_valor";
+            this.asientovalorDataGridViewTextBoxColumn.HeaderText = "Saldo";
+            this.asientovalorDataGridViewTextBoxColumn.Name = "asientovalorDataGridViewTextBoxColumn";
+            this.asientovalorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientotipoDataGridViewTextBoxColumn
+            // 
+            this.asientotipoDataGridViewTextBoxColumn.DataPropertyName = "asiento_tipo";
+            this.asientotipoDataGridViewTextBoxColumn.HeaderText = "Debe/Haber";
+            this.asientotipoDataGridViewTextBoxColumn.Name = "asientotipoDataGridViewTextBoxColumn";
+            this.asientotipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cuentasDataGridViewTextBoxColumn
+            // 
+            this.cuentasDataGridViewTextBoxColumn.DataPropertyName = "cuentas";
+            this.cuentasDataGridViewTextBoxColumn.HeaderText = "cuentas";
+            this.cuentasDataGridViewTextBoxColumn.Name = "cuentasDataGridViewTextBoxColumn";
+            this.cuentasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cuentasidDataGridViewTextBoxColumn
+            // 
+            this.cuentasidDataGridViewTextBoxColumn.DataPropertyName = "cuentas_id";
+            this.cuentasidDataGridViewTextBoxColumn.HeaderText = "cuentas_id";
+            this.cuentasidDataGridViewTextBoxColumn.Name = "cuentasidDataGridViewTextBoxColumn";
+            this.cuentasidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentasidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cuentatipoDataGridViewTextBoxColumn
+            // 
+            this.cuentatipoDataGridViewTextBoxColumn.DataPropertyName = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.HeaderText = "cuenta_tipo";
+            this.cuentatipoDataGridViewTextBoxColumn.Name = "cuentatipoDataGridViewTextBoxColumn";
+            this.cuentatipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentatipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
             // LibroDiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +266,7 @@
             this.Name = "LibroDiario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LibroDiario";
+            this.Load += new System.EventHandler(this.LibroDiario_Load);
             this.pnlUno.ResumeLayout(false);
             this.pnlUno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLOSE)).EndInit();
@@ -158,6 +274,9 @@
             this.Container.ResumeLayout(false);
             this.pnlData.ResumeLayout(false);
             this.actions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +291,18 @@
         private System.Windows.Forms.Panel Container;
         private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.Panel actions;
+        private System.Windows.Forms.BindingSource globalDataSetLibroDiarioBindingSource;
+        private globalDataSetLibroDiario globalDataSetLibroDiario;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private globalDataSetLibroDiarioTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asientoreferenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asientofechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentasdescripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asientovalorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asientotipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentasidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentatipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     }
 }

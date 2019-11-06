@@ -30,6 +30,9 @@ namespace Quatum.Vista.ModalUI
             ventana.btnAumentar.Click += new EventHandler(btnAumentar_Click);
             ventana.btnDisminuir.Click += new EventHandler(btnDisminuir_Click);
             ventana.btnAceptar.Click += new EventHandler(btnACeptar_Click);
+            ventana.checkBoxDebe.Click += new EventHandler(btnDebe_checked);
+            ventana.checkBoxHaber.Click += new EventHandler(btnHaber_checked);
+            ventana.txtMonto.KeyPress += new KeyPressEventHandler(textMonto);
         }
 
 
@@ -47,7 +50,25 @@ namespace Quatum.Vista.ModalUI
             }
         }
 
+        private void btnDebe_checked(object sender, EventArgs e) { 
+                 if(ventana.checkBoxDebe.Checked == true){
+                    ventana.checkBoxHaber.Enabled = false;
+                    }else{
+                    ventana.checkBoxHaber.Enabled = true;
+                }
+        }
 
+        private void btnHaber_checked(object sender, EventArgs e)
+        {
+            if (ventana.checkBoxHaber.Checked == true)
+            {
+                ventana.checkBoxDebe.Enabled = false;
+            }
+            else
+            {
+                ventana.checkBoxDebe.Enabled = true;
+            }
+        }
         private void btnDisminuir_Click(object sender, EventArgs e)
         {
             disminuir = int.Parse(ventana.textCantidad.Text);
@@ -70,22 +91,44 @@ namespace Quatum.Vista.ModalUI
             top(estado);
             estado = true;
             loadPanel(estado);
-            /*TextBox txt = new TextBox();
-            txt.Text = cantidad.ToString();
-            ventana.panelDescripcion.Controls.Add(txt);*/
+            int minimo = int.Parse(ventana.textCantidad.Text);
+            if (minimo != 2)
+            {
+                ventana.checkBoxDebe.Enabled = true;
+                ventana.checkBoxHaber.Enabled = true;
+            }
+            else
+            {
+                ventana.checkBoxDebe.Enabled = false;
+                ventana.checkBoxHaber.Enabled = false;
+            }
+            //ventana.btnEnviar.Enabled = false;
         }
-
+        private void textMonto(object sender, KeyPressEventArgs e) { 
+        
+        if(Char.IsLetter(e.KeyChar))//Al pulsar una letra
+            {
+                e.Handled = true; //No Se acepta (todo OK)
+            }
+        else if (Char.IsPunctuation(e.KeyChar)) {
+            e.Handled = true; //Numeros con coma
+        }
+        else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
+        {
+            e.Handled = false; //Se acepta (todo OK)
+        }
+        else if (Char.IsDigit(e.KeyChar))
+        {
+            e.Handled = false;
+        }
+        else //Para todo lo demas
+        {
+            e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
+        }
+ 
+        }
         private void top(Boolean estado) {
             ventana.pblTop.Enabled = estado;
-            /*
-            ventana.btnAumentar.Enabled = estado;
-            ventana.btnDisminuir.Enabled = estado;
-            ventana.btnAumentar.Visible = estado;
-            ventana.btnDisminuir.Visible = estado;
-            ventana.textCantidad.Visible = estado;
-            ventana.label1.Visible = estado;
-            ventana.btnAceptar.Visible = estado;
-            */
         }
 
         private void loadPanel(Boolean estado) {

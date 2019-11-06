@@ -10,5 +10,12 @@ namespace Quatum.Vista.LibroDiarioUI
             InitializeComponent();
             LDController controlador = new LDController(this);
         }
+
+        private void LibroDiario_Load(object sender, System.EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'globalDataSetLibroDiario.DataTable1' Puede moverla o quitarla según sea necesario.
+            this.dataTable1TableAdapter.Fill(this.globalDataSetLibroDiario.DataTable1);
+
+        }
     }
 }
