@@ -35,12 +35,12 @@
             this.btnCLOSE = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.globalDataSetLibroDiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.globalDataSetLibroDiario = new Quatum.globalDataSetLibroDiario();
             this.Container = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
             this.actions = new System.Windows.Forms.Panel();
-            this.globalDataSetLibroDiario = new Quatum.globalDataSetLibroDiario();
-            this.globalDataSetLibroDiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new Quatum.globalDataSetLibroDiarioTableAdapters.DataTable1TableAdapter();
             this.asientoreferenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asientofechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +54,12 @@
             this.pnlUno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLOSE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).BeginInit();
             this.Container.SuspendLayout();
             this.pnlData.SuspendLayout();
             this.actions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUno
@@ -139,6 +139,21 @@
             this.dataGridView.Size = new System.Drawing.Size(800, 349);
             this.dataGridView.TabIndex = 0;
             // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.globalDataSetLibroDiarioBindingSource;
+            // 
+            // globalDataSetLibroDiarioBindingSource
+            // 
+            this.globalDataSetLibroDiarioBindingSource.DataSource = this.globalDataSetLibroDiario;
+            this.globalDataSetLibroDiarioBindingSource.Position = 0;
+            // 
+            // globalDataSetLibroDiario
+            // 
+            this.globalDataSetLibroDiario.DataSetName = "globalDataSetLibroDiario";
+            this.globalDataSetLibroDiario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Container
             // 
             this.Container.Controls.Add(this.pnlData);
@@ -167,21 +182,6 @@
             this.actions.Size = new System.Drawing.Size(800, 70);
             this.actions.TabIndex = 2;
             // 
-            // globalDataSetLibroDiario
-            // 
-            this.globalDataSetLibroDiario.DataSetName = "globalDataSetLibroDiario";
-            this.globalDataSetLibroDiario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // globalDataSetLibroDiarioBindingSource
-            // 
-            this.globalDataSetLibroDiarioBindingSource.DataSource = this.globalDataSetLibroDiario;
-            this.globalDataSetLibroDiarioBindingSource.Position = 0;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.globalDataSetLibroDiarioBindingSource;
-            // 
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
@@ -199,6 +199,7 @@
             this.asientofechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.asientofechaDataGridViewTextBoxColumn.Name = "asientofechaDataGridViewTextBoxColumn";
             this.asientofechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asientofechaDataGridViewTextBoxColumn.Width = 200;
             // 
             // cuentasdescripcionDataGridViewTextBoxColumn
             // 
@@ -206,6 +207,7 @@
             this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
             this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 150;
             // 
             // asientovalorDataGridViewTextBoxColumn
             // 
@@ -213,6 +215,7 @@
             this.asientovalorDataGridViewTextBoxColumn.HeaderText = "Saldo";
             this.asientovalorDataGridViewTextBoxColumn.Name = "asientovalorDataGridViewTextBoxColumn";
             this.asientovalorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asientovalorDataGridViewTextBoxColumn.Width = 75;
             // 
             // asientotipoDataGridViewTextBoxColumn
             // 
@@ -220,6 +223,7 @@
             this.asientotipoDataGridViewTextBoxColumn.HeaderText = "Debe/Haber";
             this.asientotipoDataGridViewTextBoxColumn.Name = "asientotipoDataGridViewTextBoxColumn";
             this.asientotipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asientotipoDataGridViewTextBoxColumn.Width = 75;
             // 
             // cuentasDataGridViewTextBoxColumn
             // 
@@ -271,12 +275,12 @@
             this.pnlUno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLOSE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).EndInit();
             this.Container.ResumeLayout(false);
             this.pnlData.ResumeLayout(false);
             this.actions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

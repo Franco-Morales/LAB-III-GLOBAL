@@ -15,7 +15,8 @@ namespace Quatum.Vista.ModalUI
     /// </summary>
     public class ModalController
     {
-
+        int controlBotonCargar;//control del boton cargar
+        int controlCheckBox;//Control para los checkbox
         int aumentar;//auxiliar para el boton aumentar
         int disminuir;//auxiliar para el boton disminuir
         int cantidadCargar;//auxliar para el boton cargar cuenta
@@ -23,17 +24,24 @@ namespace Quatum.Vista.ModalUI
         int id; //Id de la cuenta seleccionada a usar
         String dhProvisorio;//auxiliar para el debe o haber provisorio
         String fechaProvisoria;//auxiliara para la fecha provisoria;
+        String descripcionProvisoria;//
         bool estado = false;//Control de que se debe mostrar o no
-        Modal ventana;
+        Modal ventana;//Ventana Modal
         Mensaje mensaje = new Mensaje();
-        public ConsultaPC consulta;
-
+        public ConsultaPC consulta; //ConsultaPc
+        /// <summary>
+        /// Comandos mysql
+        /// </summary>
+        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
         public ModalController() { }
 
 
         public ModalController(Modal ventanaEmergente)
         {
             ventana = ventanaEmergente;
+           //entana.btnEnviar.Enabled = false;
+            ventana.checkBoxDebe.Checked = true;
+            ventana.btnEnviar.Enabled = false;
             loadPanel(estado);
             ventana.btnAumentar.Click += new EventHandler(btnAumentar_Click);
             ventana.btnDisminuir.Click += new EventHandler(btnDisminuir_Click);
@@ -41,9 +49,10 @@ namespace Quatum.Vista.ModalUI
             ventana.checkBoxDebe.Click += new EventHandler(btnDebe_checked);
             ventana.checkBoxHaber.Click += new EventHandler(btnHaber_checked);
             ventana.txtMonto.KeyPress += new KeyPressEventHandler(textMonto);
+            ventana.txtSeleccionado.TextChanged += new EventHandler(cuentaProvisoria_Texto);
             ventana.btnEnviar.Click += new EventHandler(cargarCuentaProvisoria_Click);
             ventana.seleccionarCuenta.Click += new EventHandler(consultaDeCuenta_Click);
-            //ventana.cargarBD.Click += new EventHandler(cargarCuentaFinal_click);
+            ventana.cargarBD.Click += new EventHandler(cargarCuentaFinal_click);
         }
         /// <summary>
         /// Cargar a la base de datos en el libro diario ya finalizada, todavia no termina
@@ -52,27 +61,32 @@ namespace Quatum.Vista.ModalUI
         /// <param name="e"></param>
         private void cargarCuentaFinal_click(object sender, EventArgs e)
         {
-            MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
             //Comando de SQL
             MySqlCommand comando = conexion.CreateCommand();
-            String fecha = "asd";
-            String Debe = "Debe";
-            comando.CommandText = "INSERT INTO asientos" +
-                "(asiento_fecha, asiento_tipo, asiento_valor, cuentas, asiento_referencia)" +
-            "VALUES '" + fecha + "','" + Debe + "'," + 500 + "," + 7 + "," + 2 + ")";
-            try
+            for (int i = 0; i < cantidadCargar; i++)
             {
-                conexion.Open();
-                MessageBox.Show("Cargado al libro diario");
+                String fecha = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["fechaProvisoria"].Value);
+                String tipoDH = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
+                int monto = Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
+                int idFinal = Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["Column2"].Value); ;
+                comando.CommandText = "INSERT INTO asientos (asiento_fecha, asiento_tipo, asiento_valor, cuentas, asiento_referencia) VALUES ('" + fecha + "','" + tipoDH + "'," + monto + "," + idFinal + ",  2  )";
+                if (i == cantidadCargar - 1) {
+                    MessageBox.Show("Cuentas cargadas al libro diario y la base de datos");
+                    ventana.Close();
+                }
+                try
+                {
+                    conexion.Open();
+                }
+                catch (Exception ex)
+                {
+                    string mensaje = "Error en la conexion \n Excepcion: " + ex.Message;
+                    Mensaje.Mostrar(0, mensaje);
+                    throw;
+                }
+                MySqlDataReader reader = comando.ExecuteReader();
+                conexion.Close();
             }
-            catch (Exception ex)
-            {
-                string mensaje = "Error en la conexion \n Excepcion: " + ex.Message;
-                Mensaje.Mostrar(0, mensaje);
-                throw;
-            }
-            MySqlDataReader reader = comando.ExecuteReader();
-            conexion.Close();
         }
         private void consultaDeCuenta_Click (Object sender, EventArgs e){
             consulta = new ConsultaPC(this);
@@ -83,14 +97,13 @@ namespace Quatum.Vista.ModalUI
             consulta.cuentaSeleccionada.Visible = true;
             consulta.Show();
             consulta.cuentaSeleccionada.Click += new EventHandler(botonConsultaAceptar);
-            
         }
         private void botonConsultaAceptar(Object sender, EventArgs e) {
-            MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
             //Comando de SQL
             MySqlCommand comando = conexion.CreateCommand();
             id = int.Parse(consulta.dataSet.CurrentRow.Cells[2].Value.ToString());
             comando.CommandText = "SELECT cuentas_descripcion FROM plan_cuentas WHERE (cuentas_id = "+ id +")";
+            ventana.txtSeleccionado.Text = consulta.dataSet.CurrentRow.Cells[0].Value.ToString();
             try
             {
                 conexion.Open();
@@ -104,6 +117,7 @@ namespace Quatum.Vista.ModalUI
             }
             MySqlDataReader reader = comando.ExecuteReader();
             conexion.Close();
+            consulta.Close();
 
         }
         /// <summary>
@@ -112,11 +126,12 @@ namespace Quatum.Vista.ModalUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cargarCuentaProvisoria_Click(object sender, EventArgs e) {
+            MessageBox.Show("Debe/Haber" + controlCheckBox);
             int cantidadCuentas = int.Parse(ventana.textCantidad.Text);
             cantidadCargar++;
             if (cantidadCargar == cantidadCuentas)
             {
-                MessageBox.Show("Listo!");
+                MessageBox.Show("Todas las cuentas cargadas!");
                 ventana.btnEnviar.Enabled = false;
                 ventana.cargarBD.Visible = true;
             }
@@ -127,15 +142,36 @@ namespace Quatum.Vista.ModalUI
                 case 2: dhProvisorio = "Haber"; break;
                 }
             }
+            
+
             fechaProvisoria = ventana.dateTimePicker1.Text;
             montoProvisorio = int.Parse(ventana.txtMonto.Text);
-            ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,montoProvisorio,dhProvisorio);
+            descripcionProvisoria = ventana.txtSeleccionado.Text;
+            ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,descripcionProvisoria,montoProvisorio,dhProvisorio,id);
+            if (cantidadCuentas > 2)
+            {
+                ventana.txtMonto.Text = null;
+            }
+            ventana.txtSeleccionado.Text = null;
+            ventana.btnEnviar.Enabled = false;
+        }
+
+        private void cuentaProvisoria_Texto(object sender, EventArgs e) {
+            if (ventana.txtSeleccionado.Text != null)
+            {
+                ventana.btnEnviar.Enabled = true;
+            }
+            else {
+                ventana.btnEnviar.Enabled = false;
+            }
+        
         }
         /// <summary>
         /// Boton aumentar click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        
         private void btnAumentar_Click(object sender, EventArgs e)
         {
             aumentar = int.Parse(ventana.textCantidad.Text);
@@ -177,12 +213,15 @@ namespace Quatum.Vista.ModalUI
         /// <param name="e"></param>
         private void btnDebe_checked(object sender, EventArgs e) { 
                  if(ventana.checkBoxDebe.Checked == true){
-
-                    ventana.checkBoxHaber.Enabled = false;
-
+                     ventana.checkBoxHaber.Checked = false;
+                    controlCheckBox++;
+                    dhProvisorio = "Debe";
                     }else
                  {
                     ventana.checkBoxHaber.Enabled = true;
+                    ventana.checkBoxHaber.Checked = true;
+                    dhProvisorio = "Haber";
+                    controlCheckBox--;
                 }
         }
         /// <summary>
@@ -194,11 +233,16 @@ namespace Quatum.Vista.ModalUI
         {
             if (ventana.checkBoxHaber.Checked == true)
             {
-                ventana.checkBoxDebe.Enabled = false;
+                dhProvisorio = "Haber";
+                ventana.checkBoxDebe.Checked= false;
+                controlCheckBox++;
             }
             else
             {
                 ventana.checkBoxDebe.Enabled = true;
+                ventana.checkBoxDebe.Checked = true;
+                dhProvisorio = "Debe";
+                controlCheckBox--;
             }
         }
         /// <summary>
@@ -222,7 +266,6 @@ namespace Quatum.Vista.ModalUI
                 ventana.checkBoxDebe.Enabled = false;
                 ventana.checkBoxHaber.Enabled = false;
             }
-            //ventana.btnEnviar.Visible = false;
 
 
         }
@@ -268,6 +311,7 @@ namespace Quatum.Vista.ModalUI
         private void loadPanel(Boolean estado) {
             //Estado de los paneles
             ventana.pnlFill.Enabled = estado;
+             
         }
        
     }
