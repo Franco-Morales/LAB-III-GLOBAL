@@ -13,19 +13,20 @@ namespace Quatum.Vista.ModalUI
     /// <summary>
     /// Controlador del "Modal"
     /// </summary>
-    class ModalController
+    public class ModalController
     {
 
         int aumentar;//auxiliar para el boton aumentar
         int disminuir;//auxiliar para el boton disminuir
         int cantidadCargar;//auxliar para el boton cargar cuenta
         int montoProvisorio;//auxiliar para el monto provisorio
+        int id; //Id de la cuenta seleccionada a usar
         String dhProvisorio;//auxiliar para el debe o haber provisorio
         String fechaProvisoria;//auxiliara para la fecha provisoria;
         bool estado = false;//Control de que se debe mostrar o no
         Modal ventana;
         Mensaje mensaje = new Mensaje();
-        ConsultaPC consulta;
+        public ConsultaPC consulta;
 
         public ModalController() { }
 
@@ -45,7 +46,7 @@ namespace Quatum.Vista.ModalUI
             //ventana.cargarBD.Click += new EventHandler(cargarCuentaFinal_click);
         }
         /// <summary>
-        /// Cargar a la base de datos en el libro diario ya finalizada
+        /// Cargar a la base de datos en el libro diario ya finalizada, todavia no termina
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -74,13 +75,36 @@ namespace Quatum.Vista.ModalUI
             conexion.Close();
         }
         private void consultaDeCuenta_Click (Object sender, EventArgs e){
-            consulta = new ConsultaPC();
-            consulta.Show();
+            consulta = new ConsultaPC(this);
             consulta.Text = "Elegir cuenta a usar";
             consulta.btnAgregar.Enabled = false;
             consulta.btnDelete.Enabled = false;
             consulta.btnMod.Enabled = false;
-        
+            consulta.cuentaSeleccionada.Visible = true;
+            consulta.Show();
+            consulta.cuentaSeleccionada.Click += new EventHandler(botonConsultaAceptar);
+            
+        }
+        private void botonConsultaAceptar(Object sender, EventArgs e) {
+            MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=global");
+            //Comando de SQL
+            MySqlCommand comando = conexion.CreateCommand();
+            id = int.Parse(consulta.dataSet.CurrentRow.Cells[2].Value.ToString());
+            comando.CommandText = "SELECT cuentas_descripcion FROM plan_cuentas WHERE (cuentas_id = "+ id +")";
+            try
+            {
+                conexion.Open();
+                MessageBox.Show("Cargado al libro provisorio");
+            }
+            catch (Exception ex)
+            {
+                string mensaje = "Error en la conexion \n Excepcion: " + ex.Message;
+                Mensaje.Mostrar(0, mensaje);
+                throw;
+            }
+            MySqlDataReader reader = comando.ExecuteReader();
+            conexion.Close();
+
         }
         /// <summary>
         /// Boton cargar cuenta
@@ -105,7 +129,7 @@ namespace Quatum.Vista.ModalUI
             }
             fechaProvisoria = ventana.dateTimePicker1.Text;
             montoProvisorio = int.Parse(ventana.txtMonto.Text);
-            ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria, "Descripcion", montoProvisorio, dhProvisorio);
+            ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,montoProvisorio,dhProvisorio);
         }
         /// <summary>
         /// Boton aumentar click
@@ -115,6 +139,7 @@ namespace Quatum.Vista.ModalUI
         private void btnAumentar_Click(object sender, EventArgs e)
         {
             aumentar = int.Parse(ventana.textCantidad.Text);
+            //SELECT cuentas_id, cuentas_descripcion, cuenta_tipo plan_cuentas (cuentas_id = 2)
             aumentar++;
             ventana.textCantidad.Text = aumentar.ToString();
             ventana.btnDisminuir.Enabled = true;

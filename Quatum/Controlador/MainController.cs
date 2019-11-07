@@ -12,7 +12,6 @@ namespace Quatum.Controlador
     class MainController
     {
         private MenuPrincipal vistaMenu;
-
         /// <summary>
         /// Estado de la interfaz
         /// TRUE = Cambios guardados | FALSE = Cambios sin guardar

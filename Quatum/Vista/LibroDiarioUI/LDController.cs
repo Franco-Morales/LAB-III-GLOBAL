@@ -9,7 +9,6 @@ namespace Quatum.Vista.LibroDiarioUI
     class LDController
     {
         LibroDiario vistaPrincipal;
-
         public LDController() { }
 
         public LDController(LibroDiario libroDiarioVista)
@@ -28,7 +27,7 @@ namespace Quatum.Vista.LibroDiarioUI
             vistaPrincipal.Close();
         }
 
-        private void Agregar(object sender, EventArgs e)
+        public void Agregar(object sender, EventArgs e)
         {
             Modal ventanaEmergente = new Modal();
             ventanaEmergente.ShowDialog();

@@ -2,17 +2,26 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Quatum.Controlador;
-
+using Quatum.Vista.ModalUI;
 namespace Quatum.BDPlanCuentas.Consultas
 {
     public partial class ConsultaPC : Form
     {
         AgregarActualizar agregar;
+        public ModalController modalcontroller;
         public ConsultaPC()
         {
+
             InitializeComponent();
             dataSet.MultiSelect = false;//No se permite seleccionar muchas celdas
-            seleccionarTipo.SelectedIndex = 0;//Empieza el combobox en el indice 1
+            seleccionarTipo.SelectedIndex = 0;//Empieza el combobox en el indice 0
+        }
+        public ConsultaPC(ModalController modalcontrol)
+        {
+            modalcontroller = modalcontrol;
+            InitializeComponent();
+            dataSet.MultiSelect = false;//No se permite seleccionar muchas celdas
+            seleccionarTipo.SelectedIndex = 0;//Empieza el combobox en el indice 0
         }
         private void seleccionarTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -98,7 +107,6 @@ namespace Quatum.BDPlanCuentas.Consultas
             agregar.btnActualizar.Enabled = false;
             agregar.Show();
             agregar.Text = "Agregar";
-            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

@@ -45,6 +45,7 @@
             this.Cuentas = new System.Windows.Forms.GroupBox();
             this.pnlMiddel = new System.Windows.Forms.Panel();
             this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
+            this.cuentaSeleccionada = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
@@ -194,6 +195,7 @@
             // 
             // pnlMiddel
             // 
+            this.pnlMiddel.Controls.Add(this.cuentaSeleccionada);
             this.pnlMiddel.Controls.Add(this.dataSet);
             this.pnlMiddel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMiddel.Location = new System.Drawing.Point(0, 100);
@@ -204,6 +206,16 @@
             // plan_cuentasTableAdapter
             // 
             this.plan_cuentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // cuentaSeleccionada
+            // 
+            this.cuentaSeleccionada.Location = new System.Drawing.Point(19, 206);
+            this.cuentaSeleccionada.Name = "cuentaSeleccionada";
+            this.cuentaSeleccionada.Size = new System.Drawing.Size(148, 34);
+            this.cuentaSeleccionada.TabIndex = 2;
+            this.cuentaSeleccionada.Text = "Usar Cuenta Seleccionada";
+            this.cuentaSeleccionada.UseVisualStyleBackColor = true;
+            this.cuentaSeleccionada.Visible = false;
             // 
             // ConsultaPC
             // 
@@ -247,5 +259,6 @@
         public System.Windows.Forms.PictureBox btnMod;
         public System.Windows.Forms.PictureBox btnAgregar;
         public System.Windows.Forms.ComboBox seleccionarTipo;
+        public System.Windows.Forms.Button cuentaSeleccionada;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textCantidad = new System.Windows.Forms.TextBox();
             this.btnAumentar = new System.Windows.Forms.Button();
             this.btnDisminuir = new System.Windows.Forms.Button();
@@ -35,6 +36,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pblTop = new System.Windows.Forms.Panel();
             this.pnlFill = new System.Windows.Forms.Panel();
+            this.cargarBD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridProvisorio = new System.Windows.Forms.DataGridView();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -42,22 +44,32 @@
             this.checkBoxHaber = new System.Windows.Forms.CheckBox();
             this.checkBoxDebe = new System.Windows.Forms.CheckBox();
             this.GBoxDescripcion = new System.Windows.Forms.GroupBox();
+            this.seleccionarCuenta = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.GBoxFecha = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.globalDataSet = new Quatum.globalDataSet();
+            this.globalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.plancuentasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fechaProvisoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargarBD = new System.Windows.Forms.Button();
-            this.seleccionarCuenta = new System.Windows.Forms.Button();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pblTop.SuspendLayout();
             this.pnlFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProvisorio)).BeginInit();
             this.GBoxDebeHaber.SuspendLayout();
             this.GBoxDescripcion.SuspendLayout();
             this.GBoxFecha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // textCantidad
@@ -126,6 +138,7 @@
             // 
             // pnlFill
             // 
+            this.pnlFill.Controls.Add(this.dataGridView1);
             this.pnlFill.Controls.Add(this.cargarBD);
             this.pnlFill.Controls.Add(this.label3);
             this.pnlFill.Controls.Add(this.dataGridProvisorio);
@@ -138,6 +151,21 @@
             this.pnlFill.Name = "pnlFill";
             this.pnlFill.Size = new System.Drawing.Size(650, 273);
             this.pnlFill.TabIndex = 11;
+            // 
+            // cargarBD
+            // 
+            this.cargarBD.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cargarBD.FlatAppearance.BorderSize = 2;
+            this.cargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cargarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cargarBD.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.cargarBD.Location = new System.Drawing.Point(522, 137);
+            this.cargarBD.Name = "cargarBD";
+            this.cargarBD.Size = new System.Drawing.Size(116, 50);
+            this.cargarBD.TabIndex = 5;
+            this.cargarBD.Text = "Cargar al libro Diario";
+            this.cargarBD.UseVisualStyleBackColor = true;
+            this.cargarBD.Visible = false;
             // 
             // label3
             // 
@@ -154,10 +182,10 @@
             this.dataGridProvisorio.AllowUserToAddRows = false;
             this.dataGridProvisorio.AllowUserToDeleteRows = false;
             this.dataGridProvisorio.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridProvisorio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridProvisorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProvisorio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaProvisoria,
-            this.Descripcion,
             this.saldo,
             this.tipo});
             this.dataGridProvisorio.Location = new System.Drawing.Point(12, 125);
@@ -225,6 +253,16 @@
             this.GBoxDescripcion.TabStop = false;
             this.GBoxDescripcion.Text = "Descripción";
             // 
+            // seleccionarCuenta
+            // 
+            this.seleccionarCuenta.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.seleccionarCuenta.Location = new System.Drawing.Point(7, 24);
+            this.seleccionarCuenta.Name = "seleccionarCuenta";
+            this.seleccionarCuenta.Size = new System.Drawing.Size(111, 25);
+            this.seleccionarCuenta.TabIndex = 3;
+            this.seleccionarCuenta.Text = "Seleccionar Cuenta";
+            this.seleccionarCuenta.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -260,18 +298,56 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
+            // globalDataSet
+            // 
+            this.globalDataSet.DataSetName = "globalDataSet";
+            this.globalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // globalDataSetBindingSource
+            // 
+            this.globalDataSetBindingSource.DataSource = this.globalDataSet;
+            this.globalDataSetBindingSource.Position = 0;
+            // 
+            // plancuentasBindingSource
+            // 
+            this.plancuentasBindingSource.DataMember = "plan_cuentas";
+            this.plancuentasBindingSource.DataSource = this.globalDataSetBindingSource;
+            // 
+            // plan_cuentasTableAdapter
+            // 
+            this.plan_cuentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cuentasdescripcionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.plancuentasBindingSource1;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dataGridView1.Location = new System.Drawing.Point(202, 125);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(117, 150);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // plancuentasBindingSource1
+            // 
+            this.plancuentasBindingSource1.DataMember = "plan_cuentas";
+            this.plancuentasBindingSource1.DataSource = this.globalDataSetBindingSource;
+            // 
             // fechaProvisoria
             // 
             this.fechaProvisoria.HeaderText = "Fecha";
             this.fechaProvisoria.Name = "fechaProvisoria";
             this.fechaProvisoria.ReadOnly = true;
-            this.fechaProvisoria.Width = 200;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.fechaProvisoria.Width = 300;
             // 
             // saldo
             // 
@@ -285,30 +361,13 @@
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
             // 
-            // cargarBD
+            // cuentasdescripcionDataGridViewTextBoxColumn
             // 
-            this.cargarBD.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.cargarBD.FlatAppearance.BorderSize = 2;
-            this.cargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cargarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cargarBD.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cargarBD.Location = new System.Drawing.Point(522, 137);
-            this.cargarBD.Name = "cargarBD";
-            this.cargarBD.Size = new System.Drawing.Size(116, 50);
-            this.cargarBD.TabIndex = 5;
-            this.cargarBD.Text = "Cargar al libro Diario";
-            this.cargarBD.UseVisualStyleBackColor = true;
-            this.cargarBD.Visible = false;
-            // 
-            // seleccionarCuenta
-            // 
-            this.seleccionarCuenta.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.seleccionarCuenta.Location = new System.Drawing.Point(7, 24);
-            this.seleccionarCuenta.Name = "seleccionarCuenta";
-            this.seleccionarCuenta.Size = new System.Drawing.Size(111, 25);
-            this.seleccionarCuenta.TabIndex = 3;
-            this.seleccionarCuenta.Text = "Seleccionar Cuenta";
-            this.seleccionarCuenta.UseVisualStyleBackColor = false;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Width = 115;
             // 
             // Modal
             // 
@@ -320,6 +379,7 @@
             this.Name = "Modal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.Modal_Load);
             this.pblTop.ResumeLayout(false);
             this.pblTop.PerformLayout();
             this.pnlFill.ResumeLayout(false);
@@ -330,6 +390,11 @@
             this.GBoxDescripcion.ResumeLayout(false);
             this.GBoxDescripcion.PerformLayout();
             this.GBoxFecha.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,11 +419,17 @@
         public System.Windows.Forms.GroupBox GBoxDescripcion;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.DataGridView dataGridProvisorio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaProvisoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         public System.Windows.Forms.Button cargarBD;
         public System.Windows.Forms.Button seleccionarCuenta;
+        private System.Windows.Forms.BindingSource globalDataSetBindingSource;
+        private globalDataSet globalDataSet;
+        private System.Windows.Forms.BindingSource plancuentasBindingSource;
+        private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource plancuentasBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaProvisoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentasdescripcionDataGridViewTextBoxColumn;
     }
 }
