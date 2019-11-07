@@ -20,6 +20,6 @@ namespace Quatum.Vista.ModalUI
             textCantidad.Text = "2";
             btnDisminuir.Enabled = false;
         }
+        
+        }
     }
-
-}
