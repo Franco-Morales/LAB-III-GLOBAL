@@ -26,15 +26,14 @@ CREATE TABLE `asientos` (
   `asiento_tipo` varchar(255) DEFAULT NULL,
   `asiento_valor` float DEFAULT NULL,
   `cuentas` int(11) DEFAULT NULL,
-  `asiento_referencia` int(11) NOT NULL,
   PRIMARY KEY (`asiento_id`),
   KEY `FKb3r0ufew453cbx2m6y744ikqn` (`cuentas`),
-  KEY `FKqug0ui0m4axx8191da9s3o01h` (`asiento_referencia`),
-  CONSTRAINT `FKqug0ui0m4axx8191da9s3o01h` FOREIGN KEY (`asiento_referencia`) REFERENCES `referencia` (`id`),
   CONSTRAINT `FKb3r0ufew453cbx2m6y744ikqn` FOREIGN KEY (`cuentas`) REFERENCES `plan_cuentas` (`cuentas_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 /*Data for the table `asientos` */
+
+insert  into `asientos`(`asiento_id`,`asiento_fecha`,`asiento_tipo`,`asiento_valor`,`cuentas`) values (43,'25 noviembre','Debe',250,1),(44,'viernes, 08 de noviembre de 2019','Haber',25,2),(45,'viernes, 08 de noviembre de 2019','Debe',25,1),(46,'viernes, 08 de noviembre de 2019','Debe',24,1),(47,'viernes, 08 de noviembre de 2019','Haber',24,40);
 
 /*Table structure for table `plan_cuentas` */
 
@@ -45,24 +44,11 @@ CREATE TABLE `plan_cuentas` (
   `cuentas_descripcion` varchar(255) DEFAULT NULL,
   `cuenta_tipo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cuentas_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 /*Data for the table `plan_cuentas` */
 
-insert  into `plan_cuentas`(`cuentas_id`,`cuentas_descripcion`,`cuenta_tipo`) values (1,'Caja','Activo'),(2,'Rodados','Activo'),(3,'Maquinarias','Activo'),(4,'Documentos a cobrar','Activo'),(5,'Capital Social','PN'),(6,'Documentos a pagar','Pasivo'),(7,'Proveedores','Pasivo'),(8,'Acreedores Varios','Pasivo'),(9,'Alquileres a pagar','Pasivo'),(10,'CMV','Egreso'),(11,'Alquileres perdidos','Egreso'),(12,'Comisiones ganadas','Ingreso'),(13,'Comisiones perdidas','Ingreso'),(14,'Intereses ganados','Ingreso'),(15,'Intereses perdidos','Egreso');
-
-/*Table structure for table `referencia` */
-
-DROP TABLE IF EXISTS `referencia`;
-
-CREATE TABLE `referencia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
-/*Data for the table `referencia` */
-
-insert  into `referencia`(`id`) values (1);
+insert  into `plan_cuentas`(`cuentas_id`,`cuentas_descripcion`,`cuenta_tipo`) values (1,'Caja','Activo'),(2,'Rodados','Activo'),(5,'Capital Social','PN'),(6,'Documentos a pagar','Pasivo'),(7,'Proveedores','Pasivo'),(8,'Acreedores Varios','Pasivo'),(10,'Costo mercaderias vendidas','Egreso'),(11,'Alquileres perdidos','Egreso'),(15,'Intereses perdidos','Egreso'),(37,'Alquileres ganados','Ingreso'),(38,'Comisiones ganadas','Ingreso'),(39,'Venta de mercaderias','Ingreso'),(40,'Inmuebles','Activo');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

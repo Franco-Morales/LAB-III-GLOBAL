@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quatum.Controlador;
 using Quatum.BDPlanCuentas.Consultas;
+using Quatum.Vista.LibroDiarioUI;
 using MySql.Data.MySqlClient;
 
 namespace Quatum.Vista.ModalUI
@@ -15,20 +16,21 @@ namespace Quatum.Vista.ModalUI
     /// </summary>
     public class ModalController
     {
-        int controlBotonCargar;//control del boton cargar
         int controlCheckBox;//Control para los checkbox
         int aumentar;//auxiliar para el boton aumentar
         int disminuir;//auxiliar para el boton disminuir
+        int cantidadCuentas;
         int cantidadCargar;//auxliar para el boton cargar cuenta
         int montoProvisorio;//auxiliar para el monto provisorio
         int id; //Id de la cuenta seleccionada a usar
-        String dhProvisorio;//auxiliar para el debe o haber provisorio
+        String dhProvisorio = "Debe";//auxiliar para el debe o haber provisorio
         String fechaProvisoria;//auxiliara para la fecha provisoria;
         String descripcionProvisoria;//
         bool estado = false;//Control de que se debe mostrar o no
         Modal ventana;//Ventana Modal
         Mensaje mensaje = new Mensaje();
         public ConsultaPC consulta; //ConsultaPc
+
         /// <summary>
         /// Comandos mysql
         /// </summary>
@@ -63,14 +65,15 @@ namespace Quatum.Vista.ModalUI
         {
             //Comando de SQL
             MySqlCommand comando = conexion.CreateCommand();
-            for (int i = 0; i < cantidadCargar; i++)
+            
+            for (int i = cantidadCuentas-1; i > -1; i--)
             {
                 String fecha = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["fechaProvisoria"].Value);
                 String tipoDH = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
                 int monto = Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
                 int idFinal = Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["Column2"].Value); ;
-                comando.CommandText = "INSERT INTO asientos (asiento_fecha, asiento_tipo, asiento_valor, cuentas, asiento_referencia) VALUES ('" + fecha + "','" + tipoDH + "'," + monto + "," + idFinal + ",  2  )";
-                if (i == cantidadCargar - 1) {
+                comando.CommandText = comando.CommandText = "INSERT INTO asientos (asiento_fecha, asiento_tipo, asiento_valor, cuentas) VALUES ('" + fecha + "','" + tipoDH + "'," + monto + "," + idFinal + ")"; 
+                if (i == 0) {
                     MessageBox.Show("Cuentas cargadas al libro diario y la base de datos");
                     ventana.Close();
                 }
@@ -126,8 +129,7 @@ namespace Quatum.Vista.ModalUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cargarCuentaProvisoria_Click(object sender, EventArgs e) {
-            MessageBox.Show("Debe/Haber" + controlCheckBox);
-            int cantidadCuentas = int.Parse(ventana.textCantidad.Text);
+            cantidadCuentas = int.Parse(ventana.textCantidad.Text);
             cantidadCargar++;
             if (cantidadCargar == cantidadCuentas)
             {
@@ -143,19 +145,67 @@ namespace Quatum.Vista.ModalUI
                 }
             }
             
-
             fechaProvisoria = ventana.dateTimePicker1.Text;
             montoProvisorio = int.Parse(ventana.txtMonto.Text);
             descripcionProvisoria = ventana.txtSeleccionado.Text;
             ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,descripcionProvisoria,montoProvisorio,dhProvisorio,id);
-            if (cantidadCuentas > 2)
-            {
-                ventana.txtMonto.Text = null;
+            if (cantidadCuentas >= 3 ) {
+                if (cantidadCargar == cantidadCuentas-1)
+                        
+	                    {
+                            controlDeCuentas();
+	                    }
             }
             ventana.txtSeleccionado.Text = null;
             ventana.btnEnviar.Enabled = false;
         }
+        private void controlDeCuentas(){
+            int cantidadDebe = 0;
+            int cantidadHaber = 0;
+            int sumaTotal = 0;
+            for (int i = 0; i < cantidadCargar; i++)
+            {
+                String cant  = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
+                if (cant.Equals("Debe"))
+                {
+                    cantidadDebe++;
+                }
+                else {
+                    cantidadHaber++;
+                }
+            }
+            if (cantidadDebe > cantidadHaber) {
+                ventana.checkBoxDebe.Enabled = false;
+                ventana.checkBoxDebe.Checked = false;
+                ventana.checkBoxHaber.Checked = true;
+                dhProvisorio = "Haber";
+            }
+            else if (cantidadHaber > cantidadDebe)
+            {
+                ventana.checkBoxHaber.Enabled = false;
+                ventana.checkBoxHaber.Checked = false;
+                ventana.checkBoxDebe.Checked = true;
+                dhProvisorio = "Debe";
+            }else{
+                MessageBox.Show("Son iguales");
+            }
+            for (int j = 0; j < cantidadCargar; j++)
+            {
+                sumaTotal += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
+            }
+            ventana.txtMonto.Enabled = false;
+            ventana.txtMonto.Text = Convert.ToString(sumaTotal);
+        }
 
+        private void controlCheckbox() {
+            int i = 0;
+            String primerCuenta = Convert.ToString(ventana.dataGridProvisorio.Rows[0].Cells["tipo"].Value);
+            if (cantidadCuentas % 2 != 0) { 
+                
+
+            
+            }
+        }
         private void cuentaProvisoria_Texto(object sender, EventArgs e) {
             if (ventana.txtSeleccionado.Text != null)
             {

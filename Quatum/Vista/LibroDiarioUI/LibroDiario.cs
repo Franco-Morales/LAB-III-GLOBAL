@@ -1,4 +1,5 @@
 ﻿using Quatum.Vista.LibroDiarioUI;
+using Quatum.Vista.ModalUI;
 using System.Windows.Forms;
 
 namespace Quatum.Vista.LibroDiarioUI
@@ -10,11 +11,10 @@ namespace Quatum.Vista.LibroDiarioUI
             InitializeComponent();
             LDController controlador = new LDController(this);
         }
-
-        private void LibroDiario_Load(object sender, System.EventArgs e)
+        public void LibroDiario_Load(object sender, System.EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'globalDataSetLibroDiario.DataTable1' Puede moverla o quitarla según sea necesario.
-            this.dataTable1TableAdapter.Fill(this.globalDataSetLibroDiario.DataTable1);
+            // TODO: esta línea de código carga datos en la tabla 'libroDiarioDatos.TablaDatos' Puede moverla o quitarla según sea necesario.
+            this.tablaDatosTableAdapter.Datos(this.libroDiarioDatos.TablaDatos);
 
         }
     }

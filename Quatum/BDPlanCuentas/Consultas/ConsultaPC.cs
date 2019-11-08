@@ -93,7 +93,7 @@ namespace Quatum.BDPlanCuentas.Consultas
             
         }
 
-        private void ConsultaPC_Load(object sender, EventArgs e)
+        public void ConsultaPC_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'globalDataSet.plan_cuentas' Puede moverla o quitarla según sea necesario.
             //this.plan_cuentasTableAdapter.Fill(this.globalDataSet.plan_cuentas);
