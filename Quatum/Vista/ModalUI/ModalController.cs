@@ -151,7 +151,6 @@ namespace Quatum.Vista.ModalUI
             ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,descripcionProvisoria,montoProvisorio,dhProvisorio,id);
             if (cantidadCuentas >= 3 ) {
                 if (cantidadCargar == cantidadCuentas-1)
-                        
 	                    {
                             controlDeCuentas();
 	                    }
@@ -162,10 +161,13 @@ namespace Quatum.Vista.ModalUI
         private void controlDeCuentas(){
             int cantidadDebe = 0;
             int cantidadHaber = 0;
-            int sumaTotal = 0;
+            int sumaDebe = 0;
+            int saldo = 0;
+            int sumaHaber = 0;
             for (int i = 0; i < cantidadCargar; i++)
             {
                 String cant  = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
+                saldo += Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
                 if (cant.Equals("Debe"))
                 {
                     cantidadDebe++;
@@ -174,37 +176,59 @@ namespace Quatum.Vista.ModalUI
                     cantidadHaber++;
                 }
             }
+            for (int j = 0; j < cantidadCargar; j++)
+            {
+                if( Convert.ToString(ventana.dataGridProvisorio.Rows[j].Cells["tipo"].Value).Equals("Debe")){
+                    sumaDebe += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
+                }
+                else
+                {
+                    sumaHaber += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
+                }
+                
+            }
+
+            ventana.checkBoxHaber.Enabled = false;
+            ventana.checkBoxHaber.Checked = false;
+            ventana.checkBoxDebe.Checked = true;
+            ventana.checkBoxDebe.Enabled = false;
+            ventana.txtMonto.Enabled = false;
             if (cantidadDebe > cantidadHaber) {
-                ventana.checkBoxDebe.Enabled = false;
-                ventana.checkBoxDebe.Checked = false;
-                ventana.checkBoxHaber.Checked = true;
                 dhProvisorio = "Haber";
+
+                ventana.txtMonto.Text = Convert.ToString(sumaDebe-sumaHaber);
             }
             else if (cantidadHaber > cantidadDebe)
             {
-                ventana.checkBoxHaber.Enabled = false;
-                ventana.checkBoxHaber.Checked = false;
-                ventana.checkBoxDebe.Checked = true;
                 dhProvisorio = "Debe";
+                ventana.txtMonto.Text = Convert.ToString(sumaHaber - sumaDebe);
             }else{
-                MessageBox.Show("Son iguales");
+                if(sumaHaber > sumaDebe){
+                    ventana.checkBoxHaber.Checked = false;
+                    ventana.checkBoxHaber.Enabled = false;
+                    ventana.checkBoxDebe.Checked = true;
+                    dhProvisorio = "Debe";
+                    ventana.txtMonto.Text = Convert.ToString(sumaHaber - sumaDebe);
+                }
+                else if (sumaDebe == sumaHaber){
+                    MessageBox.Show("Error son iguales cambie el monto a un numero mayor o menor o seleccione el mismo tipo");
+                    cantidadCargar--;
+                    ventana.checkBoxDebe.Enabled = true;
+                    ventana.checkBoxHaber.Enabled = true;
+                    ventana.txtMonto.Enabled = true;
+                    ventana.txtMonto.Text = "null";
+                    ventana.dataGridProvisorio.Rows.RemoveAt(0);
+                }
+                else
+                {
+                    ventana.checkBoxDebe.Checked = false;
+                    ventana.checkBoxHaber.Checked = true;
+                    ventana.checkBoxDebe.Enabled = false;
+                    dhProvisorio = "Haber";
+                    ventana.txtMonto.Text = Convert.ToString(sumaDebe - sumaHaber);
+                }
             }
-            for (int j = 0; j < cantidadCargar; j++)
-            {
-                sumaTotal += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
-            }
-            ventana.txtMonto.Enabled = false;
-            ventana.txtMonto.Text = Convert.ToString(sumaTotal);
-        }
 
-        private void controlCheckbox() {
-            int i = 0;
-            String primerCuenta = Convert.ToString(ventana.dataGridProvisorio.Rows[0].Cells["tipo"].Value);
-            if (cantidadCuentas % 2 != 0) { 
-                
-
-            
-            }
         }
         private void cuentaProvisoria_Texto(object sender, EventArgs e) {
             if (ventana.txtSeleccionado.Text != null)
