@@ -37,18 +37,19 @@
             this.Container = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.asientofechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientovalorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actions = new System.Windows.Forms.Panel();
             this.dataTable1TableAdapter = new Quatum.globalDataSetLibroDiarioTableAdapters.DataTable1TableAdapter();
             this.tablaDatosTableAdapter = new Quatum.LibroDiarioDatosTableAdapters.TablaDatosTableAdapter();
             this.libroDiarioDatos = new Quatum.LibroDiarioDatos();
             this.tablaDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.asientotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asientovalorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentasdescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asientofechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.globalDataSetLibroDiario = new Quatum.globalDataSetLibroDiario();
             this.globalDataSetLibroDiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tablaDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlUno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLOSE)).BeginInit();
             this.Container.SuspendLayout();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUno
@@ -136,6 +138,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(126)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -143,12 +146,42 @@
             this.cuentasdescripcionDataGridViewTextBoxColumn,
             this.asientovalorDataGridViewTextBoxColumn,
             this.asientotipoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tablaDatosBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(800, 349);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // asientofechaDataGridViewTextBoxColumn
+            // 
+            this.asientofechaDataGridViewTextBoxColumn.DataPropertyName = "asiento_fecha";
+            this.asientofechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.asientofechaDataGridViewTextBoxColumn.Name = "asientofechaDataGridViewTextBoxColumn";
+            this.asientofechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asientofechaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cuentasdescripcionDataGridViewTextBoxColumn
+            // 
+            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
+            this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientovalorDataGridViewTextBoxColumn
+            // 
+            this.asientovalorDataGridViewTextBoxColumn.DataPropertyName = "asiento_valor";
+            this.asientovalorDataGridViewTextBoxColumn.HeaderText = "Saldo";
+            this.asientovalorDataGridViewTextBoxColumn.Name = "asientovalorDataGridViewTextBoxColumn";
+            this.asientovalorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientotipoDataGridViewTextBoxColumn
+            // 
+            this.asientotipoDataGridViewTextBoxColumn.DataPropertyName = "asiento_tipo";
+            this.asientotipoDataGridViewTextBoxColumn.HeaderText = "Debe";
+            this.asientotipoDataGridViewTextBoxColumn.Name = "asientotipoDataGridViewTextBoxColumn";
+            this.asientotipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // actions
             // 
@@ -177,35 +210,6 @@
             this.tablaDatosBindingSource.DataMember = "TablaDatos";
             this.tablaDatosBindingSource.DataSource = this.libroDiarioDatos;
             // 
-            // asientotipoDataGridViewTextBoxColumn
-            // 
-            this.asientotipoDataGridViewTextBoxColumn.DataPropertyName = "asiento_tipo";
-            this.asientotipoDataGridViewTextBoxColumn.HeaderText = "Debe";
-            this.asientotipoDataGridViewTextBoxColumn.Name = "asientotipoDataGridViewTextBoxColumn";
-            this.asientotipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // asientovalorDataGridViewTextBoxColumn
-            // 
-            this.asientovalorDataGridViewTextBoxColumn.DataPropertyName = "asiento_valor";
-            this.asientovalorDataGridViewTextBoxColumn.HeaderText = "Saldo";
-            this.asientovalorDataGridViewTextBoxColumn.Name = "asientovalorDataGridViewTextBoxColumn";
-            this.asientovalorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cuentasdescripcionDataGridViewTextBoxColumn
-            // 
-            this.cuentasdescripcionDataGridViewTextBoxColumn.DataPropertyName = "cuentas_descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.Name = "cuentasdescripcionDataGridViewTextBoxColumn";
-            this.cuentasdescripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // asientofechaDataGridViewTextBoxColumn
-            // 
-            this.asientofechaDataGridViewTextBoxColumn.DataPropertyName = "asiento_fecha";
-            this.asientofechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.asientofechaDataGridViewTextBoxColumn.Name = "asientofechaDataGridViewTextBoxColumn";
-            this.asientofechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.asientofechaDataGridViewTextBoxColumn.Width = 200;
-            // 
             // globalDataSetLibroDiario
             // 
             this.globalDataSetLibroDiario.DataSetName = "globalDataSetLibroDiario";
@@ -220,6 +224,11 @@
             // 
             this.dataTable1BindingSource.DataMember = "DataTable1";
             this.dataTable1BindingSource.DataSource = this.globalDataSetLibroDiarioBindingSource;
+            // 
+            // tablaDatosBindingSource1
+            // 
+            this.tablaDatosBindingSource1.DataMember = "TablaDatos";
+            this.tablaDatosBindingSource1.DataSource = this.libroDiarioDatos;
             // 
             // LibroDiario
             // 
@@ -247,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSetLibroDiarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +282,6 @@
         private globalDataSetLibroDiario globalDataSetLibroDiario;
         private System.Windows.Forms.BindingSource globalDataSetLibroDiarioBindingSource;
         private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private System.Windows.Forms.BindingSource tablaDatosBindingSource1;
     }
 }

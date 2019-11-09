@@ -131,12 +131,6 @@ namespace Quatum.Vista.ModalUI
         private void cargarCuentaProvisoria_Click(object sender, EventArgs e) {
             cantidadCuentas = int.Parse(ventana.textCantidad.Text);
             cantidadCargar++;
-            if (cantidadCargar == cantidadCuentas)
-            {
-                MessageBox.Show("Todas las cuentas cargadas!");
-                ventana.btnEnviar.Enabled = false;
-                ventana.cargarBD.Visible = true;
-            }
             if (cantidadCuentas == 2) { 
             switch (cantidadCargar)
                 {
@@ -155,19 +149,26 @@ namespace Quatum.Vista.ModalUI
                             controlDeCuentas();
 	                    }
             }
+            if(cantidadCargar > 1){
+                controlDescripcion();
+            }
             ventana.txtSeleccionado.Text = null;
             ventana.btnEnviar.Enabled = false;
+            if (cantidadCargar == cantidadCuentas)
+            {
+                MessageBox.Show("Todas las cuentas cargadas!");
+                ventana.btnEnviar.Enabled = false;
+                ventana.cargarBD.Visible = true;
+            }
         }
         private void controlDeCuentas(){
             int cantidadDebe = 0;
             int cantidadHaber = 0;
             int sumaDebe = 0;
-            int saldo = 0;
             int sumaHaber = 0;
             for (int i = 0; i < cantidadCargar; i++)
             {
                 String cant  = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
-                saldo += Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
                 if (cant.Equals("Debe"))
                 {
                     cantidadDebe++;
@@ -216,7 +217,7 @@ namespace Quatum.Vista.ModalUI
                     ventana.checkBoxDebe.Enabled = true;
                     ventana.checkBoxHaber.Enabled = true;
                     ventana.txtMonto.Enabled = true;
-                    ventana.txtMonto.Text = "null";
+                    ventana.txtMonto.Text = null;
                     ventana.dataGridProvisorio.Rows.RemoveAt(0);
                 }
                 else
@@ -230,6 +231,27 @@ namespace Quatum.Vista.ModalUI
             }
 
         }
+        private void controlDescripcion() {
+            int primer = 0;
+
+                String cant2 = Convert.ToString(ventana.dataGridProvisorio.Rows[primer].Cells["Column1"].Value);
+                if (cant2.Equals(Convert.ToString(ventana.dataGridProvisorio.Rows[primer+1].Cells["Column1"].Value)))
+                {
+                    cantidadCargar--;
+                    ventana.dataGridProvisorio.Rows.RemoveAt(0);
+                    MessageBox.Show("Error no se pueden repetir descripciones");
+                }
+                if (cantidadCargar == cantidadCuentas) {
+                    for (int i = 1; i < cantidadCuentas; i++)
+                    {
+                        if (cant2.Equals(Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["Column1"].Value))){ 
+                            MessageBox.Show("Error no se pueden repetir descripciones");
+                            cantidadCargar--;
+                            ventana.dataGridProvisorio.Rows.RemoveAt(0);
+                        }
+                    }
+                }
+			}
         private void cuentaProvisoria_Texto(object sender, EventArgs e) {
             if (ventana.txtSeleccionado.Text != null)
             {
