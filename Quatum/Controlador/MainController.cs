@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Quatum.Vista.MenuPrincipalUI;
 using Quatum.Vista.LibroDiarioUI;
+using Quatum.Vista.LibroMayorUI;
 using Quatum.BDPlanCuentas.Consultas;
 
 namespace Quatum.Controlador
@@ -33,7 +34,7 @@ namespace Quatum.Controlador
             vistaMenu.LD.Click += new EventHandler(libroDiarioOpen);
             vistaMenu.PlanCuenta.Click += new EventHandler(PlanCuentaOpen);
             vistaMenu.help.Click += new EventHandler(ayuda);
-            vistaMenu.Inv.Click += new EventHandler(inventario);
+            vistaMenu.LibMay.Click += new EventHandler(libroMayorOpen);
         }
 
 
@@ -106,6 +107,22 @@ namespace Quatum.Controlador
 
         #endregion
 
+        #region Libro Mayor : Eventos
+
+        public void libroMayorOpen(Object sender,EventArgs e)
+        {
+            try
+            {
+                LMayor lmVista = new LMayor();
+                lmVista.Show();
+            }
+            catch (Exception)
+            {
+                Mensaje.Mostrar(0, "Error al abrir el Libro Mayor");
+            }
+        }
+
+        #endregion
         #region Plan de Cuenta : Eventos
 
         public void PlanCuentaOpen(Object sender,EventArgs e)

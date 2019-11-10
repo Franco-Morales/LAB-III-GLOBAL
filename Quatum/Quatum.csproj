@@ -107,6 +107,13 @@
     <Compile Include="Vista\LibroDiarioUI\LibroDiario.Designer.cs">
       <DependentUpon>LibroDiario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\LibroMayorUI\LMayor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\LibroMayorUI\LMayor.Designer.cs">
+      <DependentUpon>LMayor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\LibroMayorUI\LMController.cs" />
     <Compile Include="Vista\MenuPrincipalUI\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Vista\LibroDiarioUI\LibroDiario.resx">
       <DependentUpon>LibroDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\LibroMayorUI\LMayor.resx">
+      <DependentUpon>LMayor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\MenuPrincipalUI\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

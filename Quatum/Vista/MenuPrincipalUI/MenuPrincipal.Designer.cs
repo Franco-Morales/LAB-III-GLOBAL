@@ -37,13 +37,11 @@
             this.pnlWindow = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.Inicio = new System.Windows.Forms.ToolStripMenuItem();
-            this.Archivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarAExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportar = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.LD = new System.Windows.Forms.ToolStripMenuItem();
-            this.Inv = new System.Windows.Forms.ToolStripMenuItem();
+            this.LibMay = new System.Windows.Forms.ToolStripMenuItem();
             this.PlanCuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.help = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMarco = new System.Windows.Forms.Panel();
@@ -143,7 +141,7 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Inicio,
             this.LD,
-            this.Inv,
+            this.LibMay,
             this.PlanCuenta,
             this.help});
             this.menu.Location = new System.Drawing.Point(0, 64);
@@ -155,7 +153,6 @@
             // Inicio
             // 
             this.Inicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Archivo,
             this.Exportar,
             this.Exit});
             this.Inicio.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -164,22 +161,6 @@
             this.Inicio.Size = new System.Drawing.Size(59, 26);
             this.Inicio.Text = "Inicio";
             // 
-            // Archivo
-            // 
-            this.Archivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
-            this.Archivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportarAExcelToolStripMenuItem});
-            this.Archivo.ForeColor = System.Drawing.Color.White;
-            this.Archivo.Name = "Archivo";
-            this.Archivo.Size = new System.Drawing.Size(163, 26);
-            this.Archivo.Text = "Archivo";
-            // 
-            // exportarAExcelToolStripMenuItem
-            // 
-            this.exportarAExcelToolStripMenuItem.Name = "exportarAExcelToolStripMenuItem";
-            this.exportarAExcelToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.exportarAExcelToolStripMenuItem.Text = "Generar Libro Mayor";
-            // 
             // Exportar
             // 
             this.Exportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
@@ -187,13 +168,13 @@
             this.excelToolStripMenuItem});
             this.Exportar.ForeColor = System.Drawing.Color.White;
             this.Exportar.Name = "Exportar";
-            this.Exportar.Size = new System.Drawing.Size(163, 26);
+            this.Exportar.Size = new System.Drawing.Size(180, 26);
             this.Exportar.Text = "Exportar a ...";
             // 
             // excelToolStripMenuItem
             // 
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.excelToolStripMenuItem.Text = "Excel";
             // 
             // Exit
@@ -201,7 +182,7 @@
             this.Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
             this.Exit.ForeColor = System.Drawing.Color.White;
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(163, 26);
+            this.Exit.Size = new System.Drawing.Size(180, 26);
             this.Exit.Text = "Salir";
             // 
             // LD
@@ -212,13 +193,13 @@
             this.LD.Size = new System.Drawing.Size(104, 26);
             this.LD.Text = "Libro Diario";
             // 
-            // Inv
+            // LibMay
             // 
-            this.Inv.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Inv.ForeColor = System.Drawing.Color.White;
-            this.Inv.Name = "Inv";
-            this.Inv.Size = new System.Drawing.Size(92, 26);
-            this.Inv.Text = "Inventario";
+            this.LibMay.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LibMay.ForeColor = System.Drawing.Color.White;
+            this.LibMay.Name = "LibMay";
+            this.LibMay.Size = new System.Drawing.Size(107, 26);
+            this.LibMay.Text = "Libro Mayor";
             // 
             // PlanCuenta
             // 
@@ -283,8 +264,6 @@
         private System.Windows.Forms.Panel pnlWindow;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem Inicio;
-        private System.Windows.Forms.ToolStripMenuItem Archivo;
-        private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exportar;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMarco;
@@ -292,6 +271,6 @@
         public System.Windows.Forms.ToolStripMenuItem Exit;
         public System.Windows.Forms.ToolStripMenuItem help;
         public System.Windows.Forms.ToolStripMenuItem PlanCuenta;
-        public System.Windows.Forms.ToolStripMenuItem Inv;
+        public System.Windows.Forms.ToolStripMenuItem LibMay;
     }
 }

@@ -78,3 +78,4 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\bin\Debug\M
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.CoreCompileInputs.cache
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroMayorUI.LMayor.resources
