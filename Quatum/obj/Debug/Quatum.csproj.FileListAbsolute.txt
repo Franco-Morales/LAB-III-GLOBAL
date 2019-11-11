@@ -61,7 +61,6 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL-master\LAB-III-GLO
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.pdb
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb
-C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.Agregar.resources
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\bin\Debug\Quatum.exe.config
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.pdb
@@ -79,3 +78,5 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Q
 C:\Users\Edunec\Downloads\TEST-ORIGINAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroMayorUI.LMayor.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
+C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroMayorUI.LMayor.resources
