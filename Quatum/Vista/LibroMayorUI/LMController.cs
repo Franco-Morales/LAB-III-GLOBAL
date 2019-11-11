@@ -91,7 +91,11 @@ namespace Quatum.Vista.LibroMayorUI
             mostrarPorCuenta(vista.dataGridLibroMayor, vista.cmbCuenta.Text);
             if (vista.cmbCuenta.SelectedIndex != 0)
             {
-                saldoFinal();
+
+                if (vista.dataGridLibroMayor != null)
+                {
+                    saldoFinal();
+                }
             }
             else
             {
@@ -103,7 +107,10 @@ namespace Quatum.Vista.LibroMayorUI
             mostrarPorFecha(vista.dataGridLibroMayor,vista.cmbCuenta.Text);
             if (vista.cmbCuenta.SelectedIndex != 0)
             {
+                if (vista.dataGridLibroMayor != null)
+                {
                 saldoFinal();
+                }
             }
             else
             {
@@ -112,6 +119,19 @@ namespace Quatum.Vista.LibroMayorUI
         }
         public void cmbHasta(Object sender, EventArgs e) {
             mostrarPorFecha(vista.dataGridLibroMayor,vista.cmbCuenta.Text);
+
+            if (vista.cmbCuenta.SelectedIndex != 0)
+            {
+
+                if (vista.dataGridLibroMayor != null)
+                {
+                    saldoFinal();
+                }
+            }
+            else
+            {
+                saldoLibroMayor();
+            }
         }
         public void mostrarPorCuenta(DataGridView uno, String descripcion) {
             
@@ -128,12 +148,18 @@ namespace Quatum.Vista.LibroMayorUI
         {
 
             DataTable dt = new DataTable();
-            int contador = 0;
             if (vista.cmbFecha.SelectedIndex > vista.cmbHasta.SelectedIndex) {
-                contador++;
-                if(contador > 1){
-                    MessageBox.Show("Error no puede elegir una fecha menor a la seleccionada, eliga la misma o una mayor");
+                if (vista.cmbCuenta.SelectedIndex > 0)
+                {
+                    for (int i = vista.cmbFecha.SelectedIndex; i >= vista.cmbHasta.SelectedIndex; i--)
+                    {
+                        MySqlDataAdapter adaptador = new MySqlDataAdapter("SELECT asientos.asiento_fecha, plan_cuentas.cuentas_descripcion, plan_cuentas.cuenta_tipo, asientos.asiento_valor, asientos.asiento_tipo FROM  asientos INNER JOIN plan_cuentas ON asientos.cuentas = plan_cuentas.cuentas_id WHERE (asientos.asiento_fecha = '" + vista.cmbFecha.Items[i] + "') AND (plan_cuentas.cuentas_descripcion = '" + descripcion + "')", conexion);
+
+                        adaptador.Fill(dt);
+                        uno.DataSource = dt;
+                    }
                 }
+                       
             }
             else
             {   
