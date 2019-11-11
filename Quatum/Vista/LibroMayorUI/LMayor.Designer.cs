@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LMayor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbCuenta = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbHasta = new System.Windows.Forms.ComboBox();
             this.cmbFecha = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.saldoTxt = new System.Windows.Forms.TextBox();
             this.saldoLbl = new System.Windows.Forms.Label();
             this.dataGridLibroMayor = new System.Windows.Forms.DataGridView();
-            this.cmbHasta = new System.Windows.Forms.ComboBox();
             this.fechaLibroMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionLibroMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldoLibroMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +51,10 @@
             this.tablaDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libroDiarioDatos = new Quatum.LibroDiarioDatos();
             this.tablaDatosTableAdapter = new Quatum.LibroDiarioDatosTableAdapters.TablaDatosTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.globalDataSet1 = new Quatum.globalDataSet();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnExportar = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLibroMayor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libroDiarioDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,6 +110,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por fecha";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(231, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Hasta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Desde";
+            // 
+            // cmbHasta
+            // 
+            this.cmbHasta.FormattingEnabled = true;
+            this.cmbHasta.Location = new System.Drawing.Point(234, 34);
+            this.cmbHasta.Name = "cmbHasta";
+            this.cmbHasta.Size = new System.Drawing.Size(196, 21);
+            this.cmbHasta.TabIndex = 1;
+            // 
             // cmbFecha
             // 
             this.cmbFecha.FormattingEnabled = true;
@@ -123,16 +156,18 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.btnExportar);
             this.panel3.Controls.Add(this.saldoTxt);
             this.panel3.Controls.Add(this.saldoLbl);
             this.panel3.Location = new System.Drawing.Point(3, 253);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(797, 100);
+            this.panel3.Size = new System.Drawing.Size(716, 100);
             this.panel3.TabIndex = 1;
             // 
             // saldoTxt
             // 
-            this.saldoTxt.Location = new System.Drawing.Point(180, 14);
+            this.saldoTxt.Location = new System.Drawing.Point(180, 18);
             this.saldoTxt.Name = "saldoTxt";
             this.saldoTxt.ReadOnly = true;
             this.saldoTxt.Size = new System.Drawing.Size(100, 20);
@@ -165,14 +200,6 @@
             this.dataGridLibroMayor.ReadOnly = true;
             this.dataGridLibroMayor.Size = new System.Drawing.Size(797, 251);
             this.dataGridLibroMayor.TabIndex = 0;
-            // 
-            // cmbHasta
-            // 
-            this.cmbHasta.FormattingEnabled = true;
-            this.cmbHasta.Location = new System.Drawing.Point(234, 34);
-            this.cmbHasta.Name = "cmbHasta";
-            this.cmbHasta.Size = new System.Drawing.Size(196, 21);
-            this.cmbHasta.TabIndex = 1;
             // 
             // fechaLibroMayor
             // 
@@ -225,23 +252,39 @@
             // 
             this.tablaDatosTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
+            // globalDataSet1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Desde";
+            this.globalDataSet1.DataSetName = "globalDataSet";
+            this.globalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label2
+            // imageList1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Hasta";
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.Location = new System.Drawing.Point(633, 14);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(57, 39);
+            this.btnExportar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExportar.TabIndex = 2;
+            this.btnExportar.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Yellow;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(375, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Exportar libro mayor a excel";
             // 
             // LMayor
             // 
@@ -264,6 +307,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLibroMayor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libroDiarioDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.globalDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +336,9 @@
         public System.Windows.Forms.ComboBox cmbHasta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private globalDataSet globalDataSet1;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.PictureBox btnExportar;
     }
 }
