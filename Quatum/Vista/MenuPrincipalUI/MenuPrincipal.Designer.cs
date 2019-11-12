@@ -37,8 +37,6 @@
             this.pnlWindow = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.Inicio = new System.Windows.Forms.ToolStripMenuItem();
-            this.Exportar = new System.Windows.Forms.ToolStripMenuItem();
-            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.LD = new System.Windows.Forms.ToolStripMenuItem();
             this.LibMay = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,29 +151,12 @@
             // Inicio
             // 
             this.Inicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Exportar,
             this.Exit});
             this.Inicio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Inicio.ForeColor = System.Drawing.Color.White;
             this.Inicio.Name = "Inicio";
             this.Inicio.Size = new System.Drawing.Size(59, 26);
             this.Inicio.Text = "Inicio";
-            // 
-            // Exportar
-            // 
-            this.Exportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
-            this.Exportar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.excelToolStripMenuItem});
-            this.Exportar.ForeColor = System.Drawing.Color.White;
-            this.Exportar.Name = "Exportar";
-            this.Exportar.Size = new System.Drawing.Size(180, 26);
-            this.Exportar.Text = "Exportar a ...";
-            // 
-            // excelToolStripMenuItem
-            // 
-            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.excelToolStripMenuItem.Text = "Excel";
             // 
             // Exit
             // 
@@ -264,8 +245,6 @@
         private System.Windows.Forms.Panel pnlWindow;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem Inicio;
-        private System.Windows.Forms.ToolStripMenuItem Exportar;
-        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMarco;
         public System.Windows.Forms.ToolStripMenuItem LD;
         public System.Windows.Forms.ToolStripMenuItem Exit;

@@ -9,7 +9,6 @@ C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatu
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.MenuPrincipal.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.LibroDiario.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\App\Quatum\Quatum\obj\Debug\Quatum.GUI.Modal.resources
-C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojAssemblyReference.cache
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Properties.Resources.resources
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csproj.GenerateResource.cache
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.exe
@@ -80,3 +79,4 @@ C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Q
 C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroMayorUI.LMayor.resources
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.BDPlanCuentas.Consultas.AgregarActualizar.resources
 C:\Users\Edunec\Downloads\GLOBAL\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.Vista.LibroMayorUI.LMayor.resources
+C:\Users\Franco Morales\Desktop\Quatum Project\LAB-III-GLOBAL\Quatum\obj\Debug\Quatum.csprojAssemblyReference.cache

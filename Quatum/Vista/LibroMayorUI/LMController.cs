@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using Quatum.Controlador;
 
 
 namespace Quatum.Vista.LibroMayorUI
@@ -92,7 +89,7 @@ namespace Quatum.Vista.LibroMayorUI
             if (vista.cmbCuenta.SelectedIndex != 0)
             {
 
-                if (vista.dataGridLibroMayor != null)
+                if (vista.dataGridLibroMayor.Rows != null)
                 {
                     saldoFinal();
                 }
@@ -107,7 +104,7 @@ namespace Quatum.Vista.LibroMayorUI
             mostrarPorFecha(vista.dataGridLibroMayor,vista.cmbCuenta.Text);
             if (vista.cmbCuenta.SelectedIndex != 0)
             {
-                if (vista.dataGridLibroMayor != null)
+                if (vista.dataGridLibroMayor.Rows != null)
                 {
                 saldoFinal();
                 }
@@ -123,7 +120,7 @@ namespace Quatum.Vista.LibroMayorUI
             if (vista.cmbCuenta.SelectedIndex != 0)
             {
 
-                if (vista.dataGridLibroMayor != null)
+                if (vista.dataGridLibroMayor.Rows != null)
                 {
                     saldoFinal();
                 }
@@ -190,41 +187,66 @@ namespace Quatum.Vista.LibroMayorUI
             int saldoTotalHaber = 0;
             String debe = "Debe";
             String haber = "Haber";
-            switch (vista.dataGridLibroMayor.Rows[0].Cells["tipoLibroMayor"].Value.ToString())
+            string aux;
+            if (vista.dataGridLibroMayor.RowCount >= 0)
             {
-                case "Activo":
-                case "Egreso":
-                    vista.saldoLbl.Text = "SALDO TOTAL DEUDOR: ";
-                    for (int i = 0; i < vista.dataGridLibroMayor.Rows.Count; i++)
-                    {
-                        if (vista.dataGridLibroMayor.Rows[i].Cells["debeHaberLibroMayor"].Value.ToString().Equals(debe)) {
-                            saldoTotalDebe += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
-                        }
-                        else
+                try
+                {
+                    aux = vista.dataGridLibroMayor.Rows[0].Cells["tipoLibroMayor"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aux = "+";
+                }
+                
+                switch (aux)
+                {
+                    case "Activo":
+                    case "Egreso":
+                        vista.saldoLbl.Text = "SALDO TOTAL DEUDOR: ";
+                        for (int i = 0; i < vista.dataGridLibroMayor.Rows.Count; i++)
                         {
-                            saldoTotalHaber += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            if (vista.dataGridLibroMayor.Rows[i].Cells["debeHaberLibroMayor"].Value.ToString().Equals(debe))
+                            {
+                                saldoTotalDebe += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            }
+                            else
+                            {
+                                saldoTotalHaber += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            }
                         }
-                    }
-                    vista.saldoTxt.Text = Convert.ToString(saldoTotalDebe-saldoTotalHaber);
-                    break;
-                case  "Pasivo":
-                case  "Ingreso":
-                case  "PN":
-                    vista.saldoLbl.Text = "SALDO TOTAL ACREEDOR: ";
-                    
-                    for (int i = 0; i < vista.dataGridLibroMayor.Rows.Count; i++)
-                    {
-                        if (vista.dataGridLibroMayor.Rows[i].Cells["debeHaberLibroMayor"].Value.ToString().Equals(haber)) {
-                            saldoTotalHaber += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
-                        }
-                        else
+                        vista.saldoTxt.Text = Convert.ToString(saldoTotalDebe - saldoTotalHaber);
+                        break;
+                    case "Pasivo":
+                    case "Ingreso":
+                    case "PN":
+                        vista.saldoLbl.Text = "SALDO TOTAL ACREEDOR: ";
+
+                        for (int i = 0; i < vista.dataGridLibroMayor.Rows.Count; i++)
                         {
-                            saldoTotalDebe += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            if (vista.dataGridLibroMayor.Rows[i].Cells["debeHaberLibroMayor"].Value.ToString().Equals(haber))
+                            {
+                                saldoTotalHaber += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            }
+                            else
+                            {
+                                saldoTotalDebe += Convert.ToInt32(vista.dataGridLibroMayor.Rows[i].Cells["saldoLibroMayor"].Value);
+                            }
                         }
-                    }
-                    vista.saldoTxt.Text = Convert.ToString(saldoTotalHaber-saldoTotalDebe);
-                    break;
+                        vista.saldoTxt.Text = Convert.ToString(saldoTotalHaber - saldoTotalDebe);
+                        break;
+                    default:
+                        Mensaje.Mostrar(1, "No existe la cuenta en la fecha seleccionada por favor eliga otra cuenta");
+                        break;
+                }
             }
+     
+            else
+            {
+                Mensaje.Mostrar(1,"La cuenta no existe.");
+            }
+            
+            
             
         }
         public void saldoLibroMayor()

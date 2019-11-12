@@ -40,6 +40,8 @@
             this.cmbFecha = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnExportar = new System.Windows.Forms.PictureBox();
             this.saldoTxt = new System.Windows.Forms.TextBox();
             this.saldoLbl = new System.Windows.Forms.Label();
             this.dataGridLibroMayor = new System.Windows.Forms.DataGridView();
@@ -53,18 +55,16 @@
             this.tablaDatosTableAdapter = new Quatum.LibroDiarioDatosTableAdapters.TablaDatosTableAdapter();
             this.globalDataSet1 = new Quatum.globalDataSet();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnExportar = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLibroMayor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libroDiarioDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,9 +80,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cmbCuenta);
-            this.groupBox2.Location = new System.Drawing.Point(456, 12);
+            this.groupBox2.Location = new System.Drawing.Point(456, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 47);
+            this.groupBox2.Size = new System.Drawing.Size(140, 85);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar por cuenta";
@@ -130,6 +130,7 @@
             // 
             // cmbHasta
             // 
+            this.cmbHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHasta.FormattingEnabled = true;
             this.cmbHasta.Location = new System.Drawing.Point(234, 34);
             this.cmbHasta.Name = "cmbHasta";
@@ -138,6 +139,7 @@
             // 
             // cmbFecha
             // 
+            this.cmbFecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFecha.FormattingEnabled = true;
             this.cmbFecha.Location = new System.Drawing.Point(6, 34);
             this.cmbFecha.Name = "cmbFecha";
@@ -162,12 +164,35 @@
             this.panel3.Controls.Add(this.saldoLbl);
             this.panel3.Location = new System.Drawing.Point(3, 253);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(716, 100);
+            this.panel3.Size = new System.Drawing.Size(794, 100);
             this.panel3.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Yellow;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(520, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Exportar libro mayor a excel";
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.Location = new System.Drawing.Point(728, 52);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(57, 39);
+            this.btnExportar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExportar.TabIndex = 2;
+            this.btnExportar.TabStop = false;
             // 
             // saldoTxt
             // 
-            this.saldoTxt.Location = new System.Drawing.Point(180, 18);
+            this.saldoTxt.Location = new System.Drawing.Point(166, 15);
             this.saldoTxt.Name = "saldoTxt";
             this.saldoTxt.ReadOnly = true;
             this.saldoTxt.Size = new System.Drawing.Size(100, 20);
@@ -176,9 +201,10 @@
             // saldoLbl
             // 
             this.saldoLbl.AutoSize = true;
-            this.saldoLbl.Location = new System.Drawing.Point(27, 21);
+            this.saldoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saldoLbl.Location = new System.Drawing.Point(9, 18);
             this.saldoLbl.Name = "saldoLbl";
-            this.saldoLbl.Size = new System.Drawing.Size(61, 13);
+            this.saldoLbl.Size = new System.Drawing.Size(80, 17);
             this.saldoLbl.TabIndex = 0;
             this.saldoLbl.Text = "Saldo Total";
             // 
@@ -263,29 +289,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.Location = new System.Drawing.Point(633, 14);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(57, 39);
-            this.btnExportar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExportar.TabIndex = 2;
-            this.btnExportar.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Yellow;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(375, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Exportar libro mayor a excel";
-            // 
             // LMayor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +296,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LMayor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LMayor";
@@ -304,11 +308,11 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLibroMayor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libroDiarioDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportar)).EndInit();
             this.ResumeLayout(false);
 
         }

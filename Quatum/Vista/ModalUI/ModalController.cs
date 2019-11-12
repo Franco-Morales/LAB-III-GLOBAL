@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quatum.Controlador;
 using Quatum.BDPlanCuentas.Consultas;
-using Quatum.Vista.LibroDiarioUI;
 using MySql.Data.MySqlClient;
 
 namespace Quatum.Vista.ModalUI
@@ -44,16 +39,24 @@ namespace Quatum.Vista.ModalUI
            //entana.btnEnviar.Enabled = false;
             ventana.checkBoxDebe.Checked = true;
             ventana.btnEnviar.Enabled = false;
+
             loadPanel(estado);
+
             ventana.btnAumentar.Click += new EventHandler(btnAumentar_Click);
             ventana.btnDisminuir.Click += new EventHandler(btnDisminuir_Click);
+
             ventana.btnAceptar.Click += new EventHandler(btnACeptar_Click);
+
             ventana.checkBoxDebe.Click += new EventHandler(btnDebe_checked);
             ventana.checkBoxHaber.Click += new EventHandler(btnHaber_checked);
+
             ventana.txtMonto.KeyPress += new KeyPressEventHandler(textMonto);
             ventana.txtSeleccionado.TextChanged += new EventHandler(cuentaProvisoria_Texto);
+
             ventana.btnEnviar.Click += new EventHandler(cargarCuentaProvisoria_Click);
+
             ventana.seleccionarCuenta.Click += new EventHandler(consultaDeCuenta_Click);
+
             ventana.cargarBD.Click += new EventHandler(cargarCuentaFinal_click);
         }
         /// <summary>
@@ -110,7 +113,7 @@ namespace Quatum.Vista.ModalUI
             try
             {
                 conexion.Open();
-                MessageBox.Show("Cargado al libro provisorio");
+                Mensaje.Mostrar(2, "Cargado al libro provisorio");
             }
             catch (Exception ex)
             {
@@ -140,7 +143,15 @@ namespace Quatum.Vista.ModalUI
             }
             
             fechaProvisoria = ventana.dateTimePicker1.Text;
-            montoProvisorio = int.Parse(ventana.txtMonto.Text);
+            try
+            {
+                montoProvisorio = int.Parse(ventana.txtMonto.Text);
+            }
+            catch (Exception exc)
+            {
+                Mensaje.Mostrar(0, "El monto no puede estar vacio \n"+exc.Message);
+            }
+            
             descripcionProvisoria = ventana.txtSeleccionado.Text;
             ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,descripcionProvisoria,montoProvisorio,dhProvisorio,id);
             if (cantidadCuentas >= 3 ) {
@@ -156,9 +167,11 @@ namespace Quatum.Vista.ModalUI
             ventana.btnEnviar.Enabled = false;
             if (cantidadCargar == cantidadCuentas)
             {
-                MessageBox.Show("Todas las cuentas cargadas!");
+                Mensaje.Mostrar(2, "Todas las cuentas cargadas!");
                 ventana.btnEnviar.Enabled = false;
                 ventana.cargarBD.Visible = true;
+            } else {
+                Mensaje.Mostrar(1, "No se ha podido cargar los valores");
             }
         }
         private void controlDeCuentas(){
@@ -267,7 +280,6 @@ namespace Quatum.Vista.ModalUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
         private void btnAumentar_Click(object sender, EventArgs e)
         {
             aumentar = int.Parse(ventana.textCantidad.Text);
@@ -312,8 +324,7 @@ namespace Quatum.Vista.ModalUI
                      ventana.checkBoxHaber.Checked = false;
                     controlCheckBox++;
                     dhProvisorio = "Debe";
-                    }else
-                 {
+                    } else {
                     ventana.checkBoxHaber.Enabled = true;
                     ventana.checkBoxHaber.Checked = true;
                     dhProvisorio = "Haber";
@@ -362,8 +373,6 @@ namespace Quatum.Vista.ModalUI
                 ventana.checkBoxDebe.Enabled = false;
                 ventana.checkBoxHaber.Enabled = false;
             }
-
-
         }
         /// <summary>
         /// Texbox de monto
