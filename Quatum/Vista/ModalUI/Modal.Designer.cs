@@ -29,21 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textCantidad = new System.Windows.Forms.TextBox();
             this.btnAumentar = new System.Windows.Forms.Button();
-            this.btnDisminuir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.pblTop = new System.Windows.Forms.Panel();
             this.pnlFill = new System.Windows.Forms.Panel();
+            this.btnDisminuir = new System.Windows.Forms.Button();
             this.cargarBD = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridProvisorio = new System.Windows.Forms.DataGridView();
-            this.fechaProvisoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.GBoxDebeHaber = new System.Windows.Forms.GroupBox();
             this.checkBoxHaber = new System.Windows.Forms.CheckBox();
@@ -60,7 +51,11 @@
             this.globalDataSet = new Quatum.globalDataSet();
             this.plancuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.plan_cuentasTableAdapter = new Quatum.globalDataSetTableAdapters.plan_cuentasTableAdapter();
-            this.pblTop.SuspendLayout();
+            this.fechaProvisoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProvisorio)).BeginInit();
             this.GBoxDebeHaber.SuspendLayout();
@@ -72,72 +67,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.plancuentasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textCantidad
-            // 
-            this.textCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCantidad.Location = new System.Drawing.Point(87, 29);
-            this.textCantidad.Name = "textCantidad";
-            this.textCantidad.ReadOnly = true;
-            this.textCantidad.Size = new System.Drawing.Size(32, 22);
-            this.textCantidad.TabIndex = 1;
-            this.textCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnAumentar
             // 
             this.btnAumentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAumentar.Location = new System.Drawing.Point(12, 24);
+            this.btnAumentar.Location = new System.Drawing.Point(522, 141);
             this.btnAumentar.Name = "btnAumentar";
-            this.btnAumentar.Size = new System.Drawing.Size(30, 30);
+            this.btnAumentar.Size = new System.Drawing.Size(116, 42);
             this.btnAumentar.TabIndex = 2;
-            this.btnAumentar.Text = "+";
+            this.btnAumentar.Text = "Agregar cuenta";
             this.btnAumentar.UseVisualStyleBackColor = true;
-            // 
-            // btnDisminuir
-            // 
-            this.btnDisminuir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisminuir.Location = new System.Drawing.Point(48, 24);
-            this.btnDisminuir.Name = "btnDisminuir";
-            this.btnDisminuir.Size = new System.Drawing.Size(30, 30);
-            this.btnDisminuir.TabIndex = 3;
-            this.btnDisminuir.Text = "-";
-            this.btnDisminuir.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(125, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Ingrese la cantidad de cuentas a usar";
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(563, 24);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 30);
-            this.btnAceptar.TabIndex = 5;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // pblTop
-            // 
-            this.pblTop.Controls.Add(this.btnDisminuir);
-            this.pblTop.Controls.Add(this.textCantidad);
-            this.pblTop.Controls.Add(this.btnAumentar);
-            this.pblTop.Controls.Add(this.label1);
-            this.pblTop.Controls.Add(this.btnAceptar);
-            this.pblTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pblTop.Location = new System.Drawing.Point(0, 0);
-            this.pblTop.Name = "pblTop";
-            this.pblTop.Size = new System.Drawing.Size(650, 88);
-            this.pblTop.TabIndex = 10;
             // 
             // pnlFill
             // 
+            this.pnlFill.Controls.Add(this.btnAumentar);
+            this.pnlFill.Controls.Add(this.btnDisminuir);
             this.pnlFill.Controls.Add(this.cargarBD);
             this.pnlFill.Controls.Add(this.label3);
             this.pnlFill.Controls.Add(this.dataGridProvisorio);
@@ -146,10 +89,20 @@
             this.pnlFill.Controls.Add(this.GBoxDescripcion);
             this.pnlFill.Controls.Add(this.GBoxFecha);
             this.pnlFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFill.Location = new System.Drawing.Point(0, 88);
+            this.pnlFill.Location = new System.Drawing.Point(0, 0);
             this.pnlFill.Name = "pnlFill";
-            this.pnlFill.Size = new System.Drawing.Size(650, 273);
+            this.pnlFill.Size = new System.Drawing.Size(650, 361);
             this.pnlFill.TabIndex = 11;
+            // 
+            // btnDisminuir
+            // 
+            this.btnDisminuir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisminuir.Location = new System.Drawing.Point(522, 189);
+            this.btnDisminuir.Name = "btnDisminuir";
+            this.btnDisminuir.Size = new System.Drawing.Size(116, 48);
+            this.btnDisminuir.TabIndex = 3;
+            this.btnDisminuir.Text = "Quitar cuenta seleccionada";
+            this.btnDisminuir.UseVisualStyleBackColor = true;
             // 
             // cargarBD
             // 
@@ -158,7 +111,7 @@
             this.cargarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cargarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cargarBD.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cargarBD.Location = new System.Drawing.Point(522, 211);
+            this.cargarBD.Location = new System.Drawing.Point(522, 299);
             this.cargarBD.Name = "cargarBD";
             this.cargarBD.Size = new System.Drawing.Size(116, 50);
             this.cargarBD.TabIndex = 5;
@@ -192,44 +145,9 @@
             this.dataGridProvisorio.Location = new System.Drawing.Point(12, 125);
             this.dataGridProvisorio.MultiSelect = false;
             this.dataGridProvisorio.Name = "dataGridProvisorio";
-            this.dataGridProvisorio.ReadOnly = true;
             this.dataGridProvisorio.RowHeadersVisible = false;
-            this.dataGridProvisorio.Size = new System.Drawing.Size(504, 136);
+            this.dataGridProvisorio.Size = new System.Drawing.Size(504, 236);
             this.dataGridProvisorio.TabIndex = 3;
-            // 
-            // fechaProvisoria
-            // 
-            this.fechaProvisoria.HeaderText = "Fecha";
-            this.fechaProvisoria.Name = "fechaProvisoria";
-            this.fechaProvisoria.ReadOnly = true;
-            this.fechaProvisoria.Width = 170;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Descripcion";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // saldo
-            // 
-            this.saldo.HeaderText = "Saldo";
-            this.saldo.Name = "saldo";
-            this.saldo.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Debe/Haber";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            this.tipo.Width = 75;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Id";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
             // 
             // btnEnviar
             // 
@@ -238,7 +156,7 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnEnviar.Location = new System.Drawing.Point(522, 211);
+            this.btnEnviar.Location = new System.Drawing.Point(522, 299);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(116, 50);
             this.btnEnviar.TabIndex = 2;
@@ -282,9 +200,9 @@
             this.GBoxDescripcion.Controls.Add(this.seleccionarCuenta);
             this.GBoxDescripcion.Controls.Add(this.label2);
             this.GBoxDescripcion.Controls.Add(this.txtMonto);
-            this.GBoxDescripcion.Location = new System.Drawing.Point(175, 6);
+            this.GBoxDescripcion.Location = new System.Drawing.Point(229, 6);
             this.GBoxDescripcion.Name = "GBoxDescripcion";
-            this.GBoxDescripcion.Size = new System.Drawing.Size(357, 88);
+            this.GBoxDescripcion.Size = new System.Drawing.Size(310, 88);
             this.GBoxDescripcion.TabIndex = 1;
             this.GBoxDescripcion.TabStop = false;
             this.GBoxDescripcion.Text = "Descripción";
@@ -311,7 +229,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(243, 24);
+            this.label2.Location = new System.Drawing.Point(178, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 2;
@@ -320,7 +238,7 @@
             // txtMonto
             // 
             this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(294, 19);
+            this.txtMonto.Location = new System.Drawing.Point(229, 28);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(57, 22);
             this.txtMonto.TabIndex = 1;
@@ -328,9 +246,9 @@
             // GBoxFecha
             // 
             this.GBoxFecha.Controls.Add(this.dateTimePicker1);
-            this.GBoxFecha.Location = new System.Drawing.Point(19, 6);
+            this.GBoxFecha.Location = new System.Drawing.Point(0, 6);
             this.GBoxFecha.Name = "GBoxFecha";
-            this.GBoxFecha.Size = new System.Drawing.Size(150, 88);
+            this.GBoxFecha.Size = new System.Drawing.Size(230, 88);
             this.GBoxFecha.TabIndex = 0;
             this.GBoxFecha.TabStop = false;
             this.GBoxFecha.Text = "Fecha";
@@ -338,9 +256,12 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(6, 40);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2019, 11, 13, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 20);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.Value = new System.DateTime(2019, 11, 13, 0, 0, 0, 0);
             // 
             // plancuentasBindingSource1
             // 
@@ -366,19 +287,48 @@
             // 
             this.plan_cuentasTableAdapter.ClearBeforeFill = true;
             // 
+            // fechaProvisoria
+            // 
+            this.fechaProvisoria.HeaderText = "Fecha";
+            this.fechaProvisoria.Name = "fechaProvisoria";
+            this.fechaProvisoria.ReadOnly = true;
+            this.fechaProvisoria.Width = 180;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Descripcion";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // saldo
+            // 
+            this.saldo.HeaderText = "Saldo";
+            this.saldo.Name = "saldo";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Debe/Haber";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            this.tipo.Width = 75;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Id";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
             // Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 361);
             this.Controls.Add(this.pnlFill);
-            this.Controls.Add(this.pblTop);
             this.Name = "Modal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.Modal_Load);
-            this.pblTop.ResumeLayout(false);
-            this.pblTop.PerformLayout();
             this.pnlFill.ResumeLayout(false);
             this.pnlFill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProvisorio)).EndInit();
@@ -397,14 +347,9 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox textCantidad;
         public System.Windows.Forms.Button btnAumentar;
-        public System.Windows.Forms.Button btnDisminuir;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox GBoxDebeHaber;
         private System.Windows.Forms.GroupBox GBoxFecha;
-        public System.Windows.Forms.Panel pblTop;
         public System.Windows.Forms.Panel pnlFill;
         public System.Windows.Forms.CheckBox checkBoxHaber;
         public System.Windows.Forms.CheckBox checkBoxDebe;
@@ -423,6 +368,7 @@
         private globalDataSetTableAdapters.plan_cuentasTableAdapter plan_cuentasTableAdapter;
         private System.Windows.Forms.BindingSource plancuentasBindingSource1;
         public System.Windows.Forms.TextBox txtSeleccionado;
+        public System.Windows.Forms.Button btnDisminuir;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaProvisoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn saldo;

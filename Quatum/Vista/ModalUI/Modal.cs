@@ -18,8 +18,8 @@ namespace Quatum.Vista.ModalUI
         {
             InitializeComponent();
             ModalController controlador = new ModalController(this);
-            textCantidad.Text = "2";
             btnDisminuir.Enabled = false;
+            btnAumentar.Enabled = false;
         }
 
         private void Modal_Load(object sender, EventArgs e)

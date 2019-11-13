@@ -12,16 +12,13 @@ namespace Quatum.Vista.ModalUI
     public class ModalController
     {
         int controlCheckBox;//Control para los checkbox
-        int aumentar;//auxiliar para el boton aumentar
-        int disminuir;//auxiliar para el boton disminuir
-        int cantidadCuentas;
+        int cantidadCuentas = 2;
         int cantidadCargar;//auxliar para el boton cargar cuenta
         int montoProvisorio;//auxiliar para el monto provisorio
         int id; //Id de la cuenta seleccionada a usar
         String dhProvisorio = "Debe";//auxiliar para el debe o haber provisorio
         String fechaProvisoria;//auxiliara para la fecha provisoria;
         String descripcionProvisoria;//
-        bool estado = false;//Control de que se debe mostrar o no
         Modal ventana;//Ventana Modal
         Mensaje mensaje = new Mensaje();
         public ConsultaPC consulta; //ConsultaPc
@@ -40,12 +37,9 @@ namespace Quatum.Vista.ModalUI
             ventana.checkBoxDebe.Checked = true;
             ventana.btnEnviar.Enabled = false;
 
-            loadPanel(estado);
-
             ventana.btnAumentar.Click += new EventHandler(btnAumentar_Click);
             ventana.btnDisminuir.Click += new EventHandler(btnDisminuir_Click);
 
-            ventana.btnAceptar.Click += new EventHandler(btnACeptar_Click);
 
             ventana.checkBoxDebe.Click += new EventHandler(btnDebe_checked);
             ventana.checkBoxHaber.Click += new EventHandler(btnHaber_checked);
@@ -66,6 +60,8 @@ namespace Quatum.Vista.ModalUI
         /// <param name="e"></param>
         private void cargarCuentaFinal_click(object sender, EventArgs e)
         {
+            bool equilibrado = montosEquilibrados();
+            if(equilibrado == true){
             //Comando de SQL
             MySqlCommand comando = conexion.CreateCommand();
             
@@ -92,6 +88,10 @@ namespace Quatum.Vista.ModalUI
                 }
                 MySqlDataReader reader = comando.ExecuteReader();
                 conexion.Close();
+            }
+            }else{
+            MessageBox.Show("Las cuentas no estan equilibradas por favor revise los saldos");
+            
             }
         }
         private void consultaDeCuenta_Click (Object sender, EventArgs e){
@@ -132,17 +132,7 @@ namespace Quatum.Vista.ModalUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cargarCuentaProvisoria_Click(object sender, EventArgs e) {
-            cantidadCuentas = int.Parse(ventana.textCantidad.Text);
             cantidadCargar++;
-            if (cantidadCuentas == 2) { 
-            switch (cantidadCargar)
-                {
-                case 1: dhProvisorio = "Debe"; ventana.txtMonto.ReadOnly = true; break;
-                case 2: dhProvisorio = "Haber"; break;
-                }
-            }
-            
-            fechaProvisoria = ventana.dateTimePicker1.Text;
             try
             {
                 montoProvisorio = int.Parse(ventana.txtMonto.Text);
@@ -151,98 +141,26 @@ namespace Quatum.Vista.ModalUI
             {
                 Mensaje.Mostrar(0, "El monto no puede estar vacio \n"+exc.Message);
             }
-            
+
+            fechaProvisoria = ventana.dateTimePicker1.Text;
             descripcionProvisoria = ventana.txtSeleccionado.Text;
             ventana.dataGridProvisorio.Rows.Insert(0, fechaProvisoria,descripcionProvisoria,montoProvisorio,dhProvisorio,id);
-            if (cantidadCuentas >= 3 ) {
-                if (cantidadCargar == cantidadCuentas-1)
-	                    {
-                            controlDeCuentas();
-	                    }
-            }
-            if(cantidadCargar > 1){
-                controlDescripcion();
-            }
             ventana.txtSeleccionado.Text = null;
-            ventana.btnEnviar.Enabled = false;
+            ventana.txtMonto.Text = null;
+            if(ventana.dataGridProvisorio.Rows.Count == 1){
+                ventana.btnDisminuir.Enabled = false;
+            }
+            else
+            {
+                ventana.btnDisminuir.Enabled = true;
+            }
             if (cantidadCargar == cantidadCuentas)
             {
                 Mensaje.Mostrar(2, "Todas las cuentas cargadas!");
                 ventana.btnEnviar.Enabled = false;
+                ventana.btnAumentar.Enabled = true;
                 ventana.cargarBD.Visible = true;
-            } else {
-                Mensaje.Mostrar(1, "No se ha podido cargar los valores");
             }
-        }
-        private void controlDeCuentas(){
-            int cantidadDebe = 0;
-            int cantidadHaber = 0;
-            int sumaDebe = 0;
-            int sumaHaber = 0;
-            for (int i = 0; i < cantidadCargar; i++)
-            {
-                String cant  = Convert.ToString(ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value);
-                if (cant.Equals("Debe"))
-                {
-                    cantidadDebe++;
-                }
-                else {
-                    cantidadHaber++;
-                }
-            }
-            for (int j = 0; j < cantidadCargar; j++)
-            {
-                if( Convert.ToString(ventana.dataGridProvisorio.Rows[j].Cells["tipo"].Value).Equals("Debe")){
-                    sumaDebe += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
-                }
-                else
-                {
-                    sumaHaber += Convert.ToInt32(ventana.dataGridProvisorio.Rows[j].Cells["saldo"].Value);
-                }
-                
-            }
-
-            ventana.checkBoxHaber.Enabled = false;
-            ventana.checkBoxHaber.Checked = false;
-            ventana.checkBoxDebe.Checked = true;
-            ventana.checkBoxDebe.Enabled = false;
-            ventana.txtMonto.Enabled = false;
-            if (cantidadDebe > cantidadHaber) {
-                dhProvisorio = "Haber";
-
-                ventana.txtMonto.Text = Convert.ToString(sumaDebe-sumaHaber);
-            }
-            else if (cantidadHaber > cantidadDebe)
-            {
-                dhProvisorio = "Debe";
-                ventana.txtMonto.Text = Convert.ToString(sumaHaber - sumaDebe);
-            }else{
-                if(sumaHaber > sumaDebe){
-                    ventana.checkBoxHaber.Checked = false;
-                    ventana.checkBoxHaber.Enabled = false;
-                    ventana.checkBoxDebe.Checked = true;
-                    dhProvisorio = "Debe";
-                    ventana.txtMonto.Text = Convert.ToString(sumaHaber - sumaDebe);
-                }
-                else if (sumaDebe == sumaHaber){
-                    MessageBox.Show("Error son iguales cambie el monto a un numero mayor o menor o seleccione el mismo tipo");
-                    cantidadCargar--;
-                    ventana.checkBoxDebe.Enabled = true;
-                    ventana.checkBoxHaber.Enabled = true;
-                    ventana.txtMonto.Enabled = true;
-                    ventana.txtMonto.Text = null;
-                    ventana.dataGridProvisorio.Rows.RemoveAt(0);
-                }
-                else
-                {
-                    ventana.checkBoxDebe.Checked = false;
-                    ventana.checkBoxHaber.Checked = true;
-                    ventana.checkBoxDebe.Enabled = false;
-                    dhProvisorio = "Haber";
-                    ventana.txtMonto.Text = Convert.ToString(sumaDebe - sumaHaber);
-                }
-            }
-
         }
         private void controlDescripcion() {
             int primer = 0;
@@ -282,16 +200,9 @@ namespace Quatum.Vista.ModalUI
         /// <param name="e"></param>
         private void btnAumentar_Click(object sender, EventArgs e)
         {
-            aumentar = int.Parse(ventana.textCantidad.Text);
-            //SELECT cuentas_id, cuentas_descripcion, cuenta_tipo plan_cuentas (cuentas_id = 2)
-            aumentar++;
-            ventana.textCantidad.Text = aumentar.ToString();
-            ventana.btnDisminuir.Enabled = true;
-            if (aumentar == 5)
-            {
-                ventana.btnAumentar.Enabled = false;
-                Mensaje.Mostrar(0, "El máximo de cuentas permitidos es 5");
-            }
+            cantidadCuentas++;
+            ventana.btnAumentar.Enabled = false;
+            ventana.cargarBD.Visible = false;
         }
 
         /// <summary>
@@ -301,18 +212,9 @@ namespace Quatum.Vista.ModalUI
         /// <param name="e"></param>
         private void btnDisminuir_Click(object sender, EventArgs e)
         {
-            disminuir = int.Parse(ventana.textCantidad.Text);
-            disminuir--;
-
-            ventana.textCantidad.Text = disminuir.ToString();
-            ventana.btnAumentar.Enabled = true;
-
-            if (disminuir == 2)
-            {
-                ventana.btnDisminuir.Enabled = false;
-                Mensaje.Mostrar(0, "El mínimo de cuentas permitidos es 2");
-
-            }
+            cantidadCargar--;
+            int indice = Convert.ToInt32(ventana.dataGridProvisorio.CurrentRow.Selected);
+            ventana.dataGridProvisorio.Rows.RemoveAt(indice);
         }
         /// <summary>
         /// Check debe
@@ -352,28 +254,7 @@ namespace Quatum.Vista.ModalUI
                 controlCheckBox--;
             }
         }
-        /// <summary>
-        /// Boton aceptar la cantidad de cuentas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnACeptar_Click(object sender, EventArgs e)
-        {   //Boton aceptar
-            top(estado);
-            estado = true;
-            loadPanel(estado);
-            int minimo = int.Parse(ventana.textCantidad.Text);
-            if (minimo != 2)
-            {
-                ventana.checkBoxDebe.Enabled = true;
-                ventana.checkBoxHaber.Enabled = true;
-            }
-            else
-            {
-                ventana.checkBoxDebe.Enabled = false;
-                ventana.checkBoxHaber.Enabled = false;
-            }
-        }
+
         /// <summary>
         /// Texbox de monto
         /// </summary>
@@ -402,22 +283,41 @@ namespace Quatum.Vista.ModalUI
         }
  
         }
-        /// <summary>
-        /// Estado de las ventanas
-        /// </summary>
-        /// <param name="estado"></param>
-        private void top(Boolean estado) {
-            ventana.pblTop.Enabled = estado;
+        private bool montosEquilibrados() {
+            int sumaDebe = 0;
+            int sumaHaber = 0;
+            int cantidadDebe = 0;
+            int cantidadHaber = 0;
+            String debe = "Debe";
+            for (int i = 0; i < ventana.dataGridProvisorio.Rows.Count; i++)
+            {
+                if (ventana.dataGridProvisorio.Rows[i].Cells["tipo"].Value.ToString().Equals(debe)) {
+                    sumaDebe += Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
+                    cantidadDebe++;
+                }
+                else
+                {
+                    sumaHaber += Convert.ToInt32(ventana.dataGridProvisorio.Rows[i].Cells["saldo"].Value);
+                    cantidadHaber++;
+                }
+            }
+            controlTipo(cantidadDebe, cantidadHaber);
+                if (sumaDebe - sumaHaber != 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            
+            
         }
-        /// <summary>
-        /// Estado de los paneles
-        /// </summary>
-        /// <param name="estado"></param>
-        private void loadPanel(Boolean estado) {
-            //Estado de los paneles
-            ventana.pnlFill.Enabled = estado;
-             
+
+        private void controlTipo(int debe, int haber) { 
+            if(debe == 0 || haber == 0){
+                MessageBox.Show("Error agrege al menos uno de cada tipo");
+            }
         }
-       
     }
 }
